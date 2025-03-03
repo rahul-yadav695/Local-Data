@@ -110,53 +110,55 @@ FormInputValue.addEventListener('submit',submitForm)
 //   console.log(value[0])
 // }
 
-// let found = document.getElementById("signin-form")
+let found = document.getElementById("signin-form")
 
-// function create(event){
-//     event.preventDefault()
-// }
-// found.addEventListener('submit',create)
+function create(event){
+    event.preventDefault()
+}
+found.addEventListener('submit',create)
+
+ 
+
+
+base_url = "/api/v1/auth/signin/request"
+
+function Signin_Page(Mobile,password){
+  const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+const raw = JSON.stringify({
+  "mobile": Mobile,
+  "password": password
+});
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow"
+};
+
+fetch("http://localhost:3000/api/v1/auth/signin/request", requestOptions)
+  .then((response) => response.json())
+  .then((result) =>{
+    if(result.success && result.message==="Successfully completed the request" && result.data){
+       document.getElementById('Numbers').value
+       document.getElementById('password').value
+       localStorage.setItem('uuid',result.data)
+
+      window.location.href = "/OtpPage"
+    }else if(!result.success){
+      alert('try Again now')
+    }
+  })
+  .catch((error) => console.error(error));
+}
+
+
+
 
 
  
-// let base_url = "http://localhost:3000"
-
-
-
-// function signInRequest(mobile, password) {
-
-//   const myHeaders = new Headers();
-//   myHeaders.append("Content-Type", "application/json");
-
-//   const raw = JSON.stringify({
-//       "mobile": mobile,
-//       "password": password
-//   });
-
-//   const requestOptions = {
-//       method: "POST",
-//       headers: myHeaders,
-//       body: raw,
-//       redirect: "follow"
-//   };
-
-//   fetch(`${base_url}/api/v1/auth/signin/request`, requestOptions)
-//       .then((response) => response.json())
-//       .then((result) => {
-//           if (result.success && result.message == "Successfully completed the request" && result.data) {
-//               localStorage.setItem("uuid",response.data)
-//               console.log("otp sended successfully")
-//               window.location.href = '/otp page'
-//               document.getElementById("showpassoword").value = ""
-//               document.getElementById("exampleInputEmail1").value = ""
-//           } else if (!result.success) {
-//               console.log(error.explanation[0])
-//           } else {
-//               console.log("something went wrong please try again later")
-//           }
-//       })
-//       .catch((error) => console.error(error));
-// }
 
 function signin(mobile,password){
   window.location.href="/OtpPage"
