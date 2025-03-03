@@ -19,19 +19,16 @@ function getMobileNumberFromInput() {
     input.classList.add("form-control-active")
 
   }
-  console.log(value[0])
-
+  console.log(value[0])                         
 
   let password = document.getElementById("password")
   let passwordValue = password.value;
   if (passwordValue.length <= 8) {
     alert("please 8 character add me")
   } else {
-    SigninPage(value, passwordValue)
+    SigninPage(Mobile,value)
   }
-}
-
-
+} 
 
 let FormInputValue = document.getElementById("signin-form")
 function submitForm(event) {
@@ -41,9 +38,11 @@ FormInputValue.addEventListener('submit', submitForm)
 
 
 
+
 let base_url = "http://localhost:3000";
+
+
 function SigninPage(Mobile,Password) {
-  window.location.href = "/OtpPage/index.html" 
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -65,7 +64,9 @@ function SigninPage(Mobile,Password) {
       if(result.success && result.message==="Successfully completed the request" && result.data){
         document.getElementById("Numbers").value = ""
         document.getElementById("password").value = ""
-        localStorage.getItem('uuid',result.data)
+        localStorage.getItem("uuid",result.data)
+        
+        window.location.href = "/OtpPage/index.html" 
 
       }else if(!result.success){
         alert("Something Went Wrong Please Try Again Later")
