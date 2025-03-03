@@ -341,20 +341,28 @@ for (let i = 1; i <= 6; i++) {
 
 
 
+// let countervalue;
+// function createtime(minutes, seconds) {
+//     let timer = document.getElementById('timer')
+//     timer.innerText =
+//         minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds)
 
-let countervalue;
-function createtime(minutes, seconds) {
-    let timer = document.getElementById('timer')
-    timer.innerText =
-        minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds)
+//     seconds--
+//     if (seconds >= 0) {
+//         countervalue = setTimeout(createtime, 1000);
+//     } else if (minutes >= 1) {
+//         setTimeout(() => {
+//             createtime(minutes - 1, 59)
+//         }, 1000);
+//     }
+// }
+// createtime(2)
 
-    seconds--
-    if (seconds >= 0) {
-        countervalue = setTimeout(createtime, 1000);
-    } else if (minutes >= 1) {
-        setTimeout(() => {
-            createtime(minutes - 1, 59)
-        }, 1000);
-    }
-}
-createtime(2)
+
+// let base_url = ""
+// function PasswordApi(Mobile,Password){
+//     let Mobile = document.getElementById('Mobile').value
+//     let Password = document.getElementById('Password').value
+
+
+// }
