@@ -1,4 +1,4 @@
-import base_url from "../export.js";
+// import base_url from "../export.js";
 console.log(base_url,"fsdfsdfdsf")
  
  
@@ -26,7 +26,7 @@ function getMobileNumberFromInput() {
   console.log(value[0]);
 
   let password = document.getElementById("password")
-  let passwordValue = password.value;
+  let passwordValue = password.value; 
   if (passwordValue.length <= 8) {
     alert("please 8 character add me")
   }else if(passwordValue.length > 15){
@@ -70,12 +70,12 @@ function SigninPage(Mobile, Password) {
         document.getElementById("Numbers").value = ""
         document.getElementById("password").value = ""
         localStorage.getItem("uuid", result.data)
-
+        cons
         window.location.href = "/OtpPage/index.html"
 
       } else if (!result.success) {
         alert("Something Went Wrong Please Try Again Later")
-      }
+      }                 
     })
     .catch((error) => console.log(error));
 }
