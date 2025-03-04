@@ -1,3 +1,7 @@
+import base_url from "../export.js";
+console.log(base_url,"fsdfsdfdsf")
+ 
+ 
 function getMobileNumberFromInput() {
   let input = document.getElementById("Numbers");
   let value = input.value
@@ -41,7 +45,7 @@ function submitForm(event) {
 }
 FormInputValue.addEventListener('submit', submitForm)
 
-let base_url = "http://localhost:3000";
+// let base_url = "http://localhost:3000";
 
 function SigninPage(Mobile, Password) {
   const myHeaders = new Headers();
@@ -75,3 +79,5 @@ function SigninPage(Mobile, Password) {
     })
     .catch((error) => console.log(error));
 }
+
+
