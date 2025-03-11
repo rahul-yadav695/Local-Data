@@ -106,19 +106,22 @@ function getinputvalue() {
 }
 
 
-function passwordValue() {
-  let password = document.getElementById("password")
-  let pass_value = password.value
-  if (pass_value.length <= 10) {
-    alert("please password lenght 10 digit ")
-  } else if (pass_value.length >= 15) {
-    alert("Max num Digit 15:-")
-  } else {
-    CreateinputValue()
-  }
+let password = document.getElementById("password")
+let passwordValue = password.value
+if (passwordValue.length <= 10) {
+  alert("please password length 10 digit ")
+} else if (passwordValue.length >= 15) {
+  alert("Max num Digit 15:-")
+} else {
+  CreateinputValue()
+}
+
+let FormInputValue = document.getElementById("signin-form")
+function submitForm(event) {
+  event.preventDefault();
 
 }
-passwordValue();
+FormInputValue.addEventListener('submit', submitForm)
 
 
 let base_url = "http://localhost:3000";
@@ -147,6 +150,8 @@ function CreateinputValue(mobile, password) {
         document.getElementById("password").value = ""
         // console.log("uuid",result.data)
         localStorage.getItem('uuid', result.data)
+      } else if (!result.success) {
+        alert("Something Went Wrong Please try Again Latter")
       }
     })
     .catch((err) => console.log(err));
