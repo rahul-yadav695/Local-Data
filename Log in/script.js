@@ -80,25 +80,38 @@
 
 
 
-function getinputvalue(){
+function getinputvalue() {
   let input = document.getElementById('Numbers')
   let value = input.value
 
-  if(value.length!=10){
-    console.log(input.classList[0],"sdfsadfsdf")
-    input.classList.remove('form-control-active')
+  if (value.length != 10) {
+    console.log(input.classList[0])
+    input.classList.remove('form-control-after')
     input.focus()
-    input.classList.add('form-control-after')
+    input.classList.add('form-control-active')
 
     alert('Enter 10 Digit number')
 
-  }else if(value[0]!="6"&&value[0]!="7"&&value[0]!="8"&&value[0]!="9"){
+  } else if (value[0] != "6" && value[0] != "7" && value[0] != "8" && value[0] != "9") {
     alert("Enter Digit Number 6,7,8,9")
-    input.classList.remove("form-control-active")
+    input.classList.remove("form-control-after")
     input.focus()
-    input.classList.add('form-control-after')
-  }else{
-    input.classList.remove('form-control-active')
-    input.classList.add('form-control-after')
+    input.classList.add('form-control-active')
+  } else {
+    input.classList.remove('form-control-after')
+    input.classList.add('form-control-active')
+  }
+
+  console.log(value[0])
+}
+
+
+function passwordValue() {
+  let password = document.getElementById("password")
+  let pass_value = password.value
+  if (pass_value.length <= 10) {
+    alert("please password lenght 10 digit ")
   }
 }
+passwordValue();
+
