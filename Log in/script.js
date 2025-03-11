@@ -1,7 +1,6 @@
-// import base_url from "../export.js";
-console.log(base_url,"fsdfsdfdsf")
- 
- 
+// import base_url from "../export.js"; 
+
+
 function getMobileNumberFromInput() {
   let input = document.getElementById("Numbers");
   let value = input.value
@@ -26,12 +25,12 @@ function getMobileNumberFromInput() {
   console.log(value[0]);
 
   let password = document.getElementById("password")
-  let passwordValue = password.value; 
+  let passwordValue = password.value;
   if (passwordValue.length <= 8) {
     alert("please 8 character add me")
-  }else if(passwordValue.length > 15){
+  } else if (passwordValue.length > 15) {
     alert("please 15 under password used  try again later")
-  } 
+  }
   else {
     SigninPage(passwordValue, value)
   }
@@ -45,7 +44,7 @@ function submitForm(event) {
 }
 FormInputValue.addEventListener('submit', submitForm)
 
-// let base_url = "http://localhost:3000";
+let base_url = "http://localhost:3000";
 
 function SigninPage(Mobile, Password) {
   const myHeaders = new Headers();
@@ -70,12 +69,11 @@ function SigninPage(Mobile, Password) {
         document.getElementById("Numbers").value = ""
         document.getElementById("password").value = ""
         localStorage.getItem("uuid", result.data)
-        cons
         window.location.href = "/OtpPage/index.html"
 
       } else if (!result.success) {
         alert("Something Went Wrong Please Try Again Later")
-      }                 
+      }
     })
     .catch((error) => console.log(error));
 }
