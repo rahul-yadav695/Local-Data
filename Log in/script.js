@@ -80,79 +80,79 @@
 
 
 
-function getinputvalue() {
-  let input = document.getElementById('Numbers')
-  let value = input.value
+// function getinputvalue() {
+//   let input = document.getElementById('Numbers')
+//   let value = input.value
 
-  if (value.length != 10) {
-    console.log(input.classList[0])
-    input.classList.remove('form-control-after')
-    input.focus()
-    input.classList.add('form-control-active')
+//   if (value.length != 10) {
+//     console.log(input.classList[0])
+//     input.classList.remove('form-control-after')
+//     input.focus()
+//     input.classList.add('form-control-active')
 
-    alert('Enter 10 Digit number')
+//     alert('Enter 10 Digit number')
 
-  } else if (value[0] != "6" && value[0] != "7" && value[0] != "8" && value[0] != "9") {
-    alert("Enter Digit Number 6,7,8,9")
-    input.classList.remove("form-control-after")
-    input.focus()
-    input.classList.add('form-control-active')
-  } else {
-    input.classList.remove('form-control-after')
-    input.classList.add('form-control-active')
-  }
+//   } else if (value[0] != "6" && value[0] != "7" && value[0] != "8" && value[0] != "9") {
+//     alert("Enter Digit Number 6,7,8,9")
+//     input.classList.remove("form-control-after")
+//     input.focus()
+//     input.classList.add('form-control-active')
+//   } else {
+//     input.classList.remove('form-control-after')
+//     input.classList.add('form-control-active')
+//   }
 
-  console.log(value[0])
-}
-
-
-let password = document.getElementById("password")
-let passwordValue = password.value
-if (passwordValue.length <= 10) {
-  alert("please password length 10 digit ")
-} else if (passwordValue.length >= 15) {
-  alert("Max num Digit 15:-")
-} else {
-  CreateinputValue()
-}
-
-let FormInputValue = document.getElementById("signin-form")
-function submitForm(event) {
-  event.preventDefault();
-
-}
-FormInputValue.addEventListener('submit', submitForm)
+//   console.log(value[0])
+// }
 
 
-let base_url = "http://localhost:3000";
+// let password = document.getElementById("password")
+// let passwordValue = password.value
+// if (passwordValue.length <= 10) {
+//   alert("please password length 10 digit ")
+// } else if (passwordValue.length >= 15) {
+//   alert("Max num Digit 15:-")
+// } else {
+//   CreateinputValue()
+// }
 
-function CreateinputValue(mobile, password) {
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
+// let FormInputValue = document.getElementById("signin-form")
+// function submitForm(event) {
+//   event.preventDefault();
 
-  const raw = JSON.stringify({
-    "Mobile": mobile,
-    "passwprd": password
-  });
+// }
+// FormInputValue.addEventListener('submit', submitForm)
 
-  const requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow"
-  };
 
-  fetch("http://localhost:3000/api/v1/auth/signin/request", requestOptions)
-    .then((response) => response.json())
-    .then((result) => {
-      if (result.success && result.message === "Successfully message printeed" && result.data) {
-        document.getElementById("Numbers").value = ""
-        document.getElementById("password").value = ""
-        // console.log("uuid",result.data)
-        localStorage.getItem('uuid', result.data)
-      } else if (!result.success) {
-        alert("Something Went Wrong Please try Again Latter")
-      }
-    })
-    .catch((err) => console.log(err));
-}
+// let base_url = "http://localhost:3000";
+
+// function CreateinputValue(mobile, password) {
+//   const myHeaders = new Headers();
+//   myHeaders.append("Content-Type", "application/json");
+
+//   const raw = JSON.stringify({
+//     "Mobile": mobile,
+//     "passwprd": password
+//   });
+
+//   const requestOptions = {
+//     method: "POST",
+//     headers: myHeaders,
+//     body: raw,
+//     redirect: "follow"
+//   };
+
+//   fetch("http://localhost:3000/api/v1/auth/signin/request", requestOptions)
+//     .then((response) => response.json())
+//     .then((result) => {
+//       if (result.success && result.message === "Successfully message printeed" && result.data) {
+//         document.getElementById("Numbers").value = ""
+//         document.getElementById("password").value = ""
+//         // console.log("uuid",result.data)
+//         localStorage.getItem('uuid', result.data)
+//       } else if (!result.success) {
+//         alert("Something Went Wrong Please try Again Latter")
+//       }
+//     })
+//     .catch((err) => console.log(err));
+// }
