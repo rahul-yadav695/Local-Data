@@ -1,7 +1,7 @@
 
 let uuid = localStorage.getItem("uuid")
-if(!uuid){
-    window.location.href="/Log in"
+if (!uuid) {
+    window.location.href = "/Log in"
 }
 // document.addEventListener("DOMContentLoaded", function () {
 //     const inputs = document.querySelectorAll(".otp-input");
