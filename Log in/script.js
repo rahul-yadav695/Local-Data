@@ -111,7 +111,43 @@ function passwordValue() {
   let pass_value = password.value
   if (pass_value.length <= 10) {
     alert("please password lenght 10 digit ")
+  } else if (pass_value.length >= 15) {
+    alert("Max num Digit 15:-")
+  } else {
+    CreateinputValue()
   }
+
 }
 passwordValue();
 
+
+let base_url = "http://localhost:3000";
+
+function CreateinputValue(mobile, password) {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const raw = JSON.stringify({
+    "Mobile": mobile,
+    "passwprd": password
+  });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+  };
+
+  fetch("http://localhost:3000/api/v1/auth/signin/request", requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      if (result.success && result.message === "Successfully message printeed" && result.data) {
+        document.getElementById("Numbers").value = ""
+        document.getElementById("password").value = ""
+        // console.log("uuid",result.data)
+        localStorage.getItem('uuid', result.data)
+      }
+    })
+    .catch((err) => console.log(err));
+}
