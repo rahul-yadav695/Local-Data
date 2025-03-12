@@ -21,17 +21,9 @@
 // console.log(myCar)
 // document.getElementById("demo").innerHTML = myCar.show();
 
+ 
 
-// class preant {
-//   constructor(name) {
-//     this.name = name
-//   }
-//   present(){
-//     console.log(`Name:-${this.name}`)
-//   }
-// }
-
-
+2.
 
 // class Parent{
 //   constructor(name){
@@ -60,6 +52,17 @@ class preant {
   }
 
   informesion(){
-    
+    console.log(`Name:-${this.name}`)
+    console.log(`Age:-${this.age}`)
+    console.log(`Contect:-${this.contect}`) 
   }
 }
+
+class child extends preant {
+  constructor(){
+    super('jaipur',"ghinoi")
+  }
+} 
+
+let final = new preant("Rahul yadav", 20 , 54554514)
+final.informesion()

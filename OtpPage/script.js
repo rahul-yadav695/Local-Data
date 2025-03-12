@@ -319,68 +319,30 @@ if (!uuid) {
 
 
 
-for (let i = 1; i <= 6; i++) {
-    let otp = `otp-${[i]}`
-    let OtpValue = document.getElementById(otp)
-    OtpValue.addEventListener('input', (e) => {
-        if (e.target.value.length > 1) {
-            document.getElementById(`otp-${[i]}`).value = e.target.value[0]
-        } else if (e.target.value.length == 1) {
-            document.getElementById(`otp-${[i]}`).blur()
-            document.getElementById(`otp-${[i + 1]}`).focus()
-        } else if (e.target.value.length == 0) {
-            document.getElementById(`otp-${[i]}`).blur()
-            document.getElementById(`otp-${[i + 1]}`).focus()
-        }
+// for (let i = 1; i <= 6; i++) {
+//     let otp = `otp-${[i]}`
+//     let OtpValue = document.getElementById(otp)
+//     OtpValue.addEventListener('input', (e) => {
+//         if (e.target.value.length > 1) {
+//             document.getElementById(`otp-${[i]}`).value = e.target.value[0]
+//         } else if (e.target.value.length == 1) {
+//             document.getElementById(`otp-${[i]}`).blur()
+//             document.getElementById(`otp-${[i + 1]}`).focus()
+//         } else if (e.target.value.length == 0) {
+//             document.getElementById(`otp-${[i]}`).blur()
+//             document.getElementById(`otp-${[i + 1]}`).focus()
+//         }
 
-    })
+//     })
 
-    OtpValue.addEventListener('keydown', function (e) {
-        if (e.key === "Backspace" && e.target.value.length == 0) {
-            document.getElementById(`otp-${[i]}`).blur()
-            document.getElementById(`otp-${[i - 1]}`).focus()
-        }
-    })
-}
-
-
-
-// let countervalue;
-// function createtime(minutes, seconds) {
-//     let timer = document.getElementById('timer')
-//     timer.innerText =
-//         minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds)
-
-//     seconds--
-//     if (seconds >= 0) {
-//         countervalue = setTimeout(createtime, 1000);
-//     } else if (minutes >= 1) {
-//         setTimeout(() => {
-//             createtime(minutes - 1, 59)
-//         }, 1000);
-//     }
+//     OtpValue.addEventListener('keydown', function (e) {
+//         if (e.key === "Backspace" && e.target.value.length == 0) {
+//             document.getElementById(`otp-${[i]}`).blur()
+//             document.getElementById(`otp-${[i - 1]}`).focus()
+//         }
+//     })
 // }
-// createtime(2)
-
-function setTimer(counter) {
-    let timers = setInterval(() => {
-        let minute = Math.floor(counter / 60)
-        let second = Math.floor(counter % 60)
-        let timer = document.getElementById('timer')
-        timer.innerText = `${minute}:${second < 10 ? "0" : ""}${second}`
-        if (counter <= 0) {
-            clearInterval(timers)
-        }
-        counter--
-    }, 1000);
-}
-setTimer(120)
 
 
-// let base_url = ""
-// function PasswordApi(Mobile,Password){
-//     let Mobile = document.getElementById('Mobile').value
-//     let Password = document.getElementById('Password').value
 
-
-// }
+// for(let )
