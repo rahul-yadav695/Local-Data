@@ -8,7 +8,7 @@ function getMobileNumberFromInput() {
     console.log(input.classList[0], "i am rahul")
     input.classList.remove("form-control-active")
     input.focus()
-    input.classList.add("form-control-after")  
+    input.classList.add("form-control-after")
 
     alert("Mobile number must be of 10 digit")
 
