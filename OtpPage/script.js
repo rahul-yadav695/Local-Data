@@ -345,4 +345,24 @@ if (!uuid) {
 
 
 
-// for(let )
+for(let i = 1; i<=6; i++){
+    let otp = `otp${[i]}`
+    let Values = document.getElementById(otp)
+    Values.addEventListener('input',(e)=>{
+        if(e.target.value.length > 1){
+            document.getElementById(`otp${[i]}`).value = e.target.value[0]
+        }else if(e.target.value.length === 1){
+            document.getElementById(`otp-${[i]}`).blur()
+            document.getElementById(`otp-${[i+1]}`).focus()
+        }else if(e.target.value.length === 0){
+            document.getElementById(`otp-${[i]}`).blur()
+            document.getElementById(`otp-${[i+1]}`).focus()
+        }
+        Values.addEventListener('keydown',(e)=>{
+            if(e.key === "Backspace" && e.target.value.length==0){
+                document.getElementById(`otp-${[i]}`).blur()
+                document.getElementById(`otp-${[i-1]}`).focus()
+            }
+        })
+    })
+}

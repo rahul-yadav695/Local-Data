@@ -5,12 +5,12 @@ function getMobileNumberFromInput() {
   let input = document.getElementById("Numbers");
   let value = input.value
   if (value.length != 10) {
-    console.log(input.classList[0], "i am rahul")
-    input.classList.remove("form-control-active")
-    input.focus()
-    input.classList.add("form-control-after")
+    console.log(input.classList[0], "i am rahul");
+    input.classList.remove("form-control-active");
+    input.focus();
+    input.classList.add("form-control-after");
 
-    alert("Mobile number must be of 10 digit")
+    alert("Mobile number must be of 10 digit");
 
   } else if (value[0] != "9" && value[0] != "8" && value[0] != "7" && value[0] != "6") {
     alert("Moblie number must start with 9,8,7 or 6");
@@ -27,7 +27,7 @@ function getMobileNumberFromInput() {
   let password = document.getElementById("password")
   let passwordValue = password.value;
   if (passwordValue.length <= 8) {
-    alert("please 8 character add me")
+    alert("please 8 character add me");
   } else if (passwordValue.length > 15) {
     alert("please 15 under password used  try again later")
   }

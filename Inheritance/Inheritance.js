@@ -60,7 +60,7 @@ class preant {
 
 class child extends preant {
   constructor(){
-    super('jaipur',"ghinoi")
+    super(`vikasnai`)
   }
 } 
 
