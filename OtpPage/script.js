@@ -345,22 +345,36 @@ for (let i = 1; i <= 6; i++) {
 
 
 
-let countervalue;
-function createtime(minutes, seconds) {
-    let timer = document.getElementById('timer')
-    timer.innerText =
-        minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds)
+// let countervalue;
+// function createtime(minutes, seconds) {
+//     let timer = document.getElementById('timer')
+//     timer.innerText =
+//         minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds)
 
-    seconds--
-    if (seconds >= 0) {
-        countervalue = setTimeout(createtime, 1000);
-    } else if (minutes >= 1) {
-        setTimeout(() => {
-            createtime(minutes - 1, 59)
-        }, 1000);
-    }
+//     seconds--
+//     if (seconds >= 0) {
+//         countervalue = setTimeout(createtime, 1000);
+//     } else if (minutes >= 1) {
+//         setTimeout(() => {
+//             createtime(minutes - 1, 59)
+//         }, 1000);
+//     }
+// }
+// createtime(2)
+
+function setTimer(counter) {
+    let timers = setInterval(() => {
+        let minute = Math.floor(counter / 60)
+        let second = Math.floor(counter % 60)
+        let timer = document.getElementById('timer')
+        timer.innerText = `${minute}:${second < 10 ? "0" : ""}${second}`
+        if (counter <= 0) {
+            clearInterval(timers)
+        }
+        counter--
+    }, 1000);
 }
-createtime(2)
+setTimer(120)
 
 
 // let base_url = ""
