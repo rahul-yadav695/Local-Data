@@ -368,6 +368,9 @@ for(let i = 1; i<=6; i++){
 }
 
 
-function SetTimer(){
-
-0}
+function SetTimer(counter){
+    let minutes = Math.floor(counter/60)
+    let seconds = Math.floor(counter%60)
+    let timer = document.getElementById("timer")
+    timer.innerText = `${minutes}:${seconds}${seconds*60}`
+}
