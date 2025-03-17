@@ -18,8 +18,8 @@ function getMobileNumberFromInput() {
     input.focus();
     input.classList.add("form-control-after");
   } else {
-    input.classList.remove("form-control-after");
-    input.classList.add("form-control-active");
+    input.classList.remove("form-control-active");
+    input.classList.add("form-control-after");
 
   }
   console.log(value[0]);
