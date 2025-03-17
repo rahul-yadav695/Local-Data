@@ -110,7 +110,29 @@ class Main {
 }
 
 let last = new Main ([1,2,3,4],[2,3])
-// last.FinalValues()
-let finalarr = last.FinalValues()
-console.log(finalarr);
+last.FinalValues()
+// let finalarr = last.FinalValues()
+// console.log(finalarr);
  
+
+
+
+class MaxValue{
+  constructor(num,num2){
+    this.num = num
+    this.num2 = num2
+  }
+
+  print(){
+    let max = 0
+    for(let i=0; i<this.num.length; i++){
+      if(this.num[i]>max){
+        max=this.num[i]
+      }
+    }
+    console.log(max)
+  }
+}
+
+let final = new MaxValue([10,20,55,65,13,16,78])
+final.print()
