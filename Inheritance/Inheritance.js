@@ -89,3 +89,28 @@
 // value.intro()
 
 
+class Main {
+  constructor(FirstValue,SecondValue){
+    this.FirstValue = FirstValue
+    this.SecondValue = SecondValue
+  }
+
+  
+  FinalValues(){
+    let newarr = []
+    for(let i=0; i<this.FirstValue.length; i++){
+      for(let j=0; j<this.SecondValue.length; j++){
+        if(this.FirstValue[i]==this.SecondValue[j]){
+          newarr.push(this.FirstValue[j])
+        }
+      }
+    }
+    console.log(newarr)
+  }
+}
+
+let last = new Main ([1,2,3,4],[2,3])
+// last.FinalValues()
+let finalarr = last.FinalValues()
+console.log(finalarr);
+ 
