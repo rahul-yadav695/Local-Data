@@ -21,8 +21,7 @@ function getMobileNumberFromInput() {
     input.classList.remove("form-control-active");
     input.classList.add("form-control-after");
 
-  }
-  console.log(value[0]);
+  } 
 
   let password = document.getElementById("password")
   let passwordValue = password.value;
@@ -32,7 +31,7 @@ function getMobileNumberFromInput() {
     alert("please 15 under password used  try again later")
   }
   else {
-    SigninPage(passwordValue, value)
+    SigninPage(value,passwordValue)
   }
 }
 
@@ -73,12 +72,16 @@ function SigninPage(Mobile, Password) {
 
       } else if (!result.success) {
         alert("Something Went Wrong Please Try Again Later")
+        console.log("ere");
+        
       }
     })
     .catch((error) => console.log(error));
 }
 
-
+let submit_button =document.getElementById("main-buton").addEventListener("click",()=>{
+  getMobileNumberFromInput()
+})
 
 // function getinputvalue() {
 //   let input = document.getElementById('Numbers')
