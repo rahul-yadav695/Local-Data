@@ -190,7 +190,8 @@ function createValue() {
     .then((data) => {
       return data.json();
     }).then((data) => {
-
+                                               
+      
       let row = document.getElementById('product-images')
 
       data.map((product) => {

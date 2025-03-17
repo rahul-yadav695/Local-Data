@@ -44,25 +44,66 @@
 // child1.displayName()
 
 
-class preant {
-  constructor(name,age,contect){
+// class preant {
+//   constructor(name,age,contect){
+//     this.name = name
+//     this.age = age
+//     this.contect = contect
+//   }
+
+//   informesion(){
+//     console.log(`Name:-${this.name}`)
+//     console.log(`Age:-${this.age}`)
+//     console.log(`Contect:-${this.contect}`) 
+//   }
+// }
+
+// class child extends preant {
+//   constructor(){
+//     super(`vikasnai`)
+//   }
+// } 
+
+// let final = new preant("Rahul yadav", 20 , 54554514)
+// final.informesion()
+
+
+1.
+
+class arr {
+  constructor(name){
     this.name = name
-    this.age = age
-    this.contect = contect
+  }
+  intro(){
+    console.log(`name:- ${this.name} :- ${this.name.length}`)
   }
 
-  informesion(){
-    console.log(`Name:-${this.name}`)
-    console.log(`Age:-${this.age}`)
-    console.log(`Contect:-${this.contect}`) 
+}
+class childd extends arr{
+  constructor(name){
+    super(name)
   }
 }
 
-class child extends preant {
-  constructor(){
-    super(`vikasnai`)
-  }
-} 
+let value = new arr ("rahulyadav")
+value.intro() 
 
-let final = new preant("Rahul yadav", 20 , 54554514)
-final.informesion()
+2.
+
+class main {
+  constructor(first,second){
+    this.first = first 
+    this.second = second
+  }
+  informtion(){
+    for(let i=0; i<=4; i++){
+       for(let j=0; j<=i; j++){
+        if(this.first[i]===this.second[j]){
+          console.log(first[j])
+        }
+       }
+    }
+  }
+}
+let finalValues = new main ([1,2,3,4],[1,2])
+finalValues.informtion()
