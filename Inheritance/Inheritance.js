@@ -21,7 +21,7 @@
 // console.log(myCar)
 // document.getElementById("demo").innerHTML = myCar.show();
 
- 
+
 
 2.
 
@@ -70,40 +70,22 @@
 
 1.
 
-class arr {
-  constructor(name){
-    this.name = name
-  }
-  intro(){
-    console.log(`name:- ${this.name} :- ${this.name.length}`)
-  }
+// class arr {
+//   constructor(name) {
+//     this.name = name
+//   }
+//   intro() {
+//     console.log(`name:- ${this.name} :- ${this.name.length}`)
+//   }
 
-}
-class childd extends arr{
-  constructor(name){
-    super(name)
-  }
-}
+// }
+// class childd extends arr {
+//   constructor(name) {
+//     super(name)
+//   }
+// }
 
-let value = new arr ("rahulyadav")
-value.intro() 
+// let value = new arr("rahulyadav")
+// value.intro()
 
-2.
 
-class main {
-  constructor(first,second){
-    this.first = first 
-    this.second = second
-  }
-  informtion(){
-    for(let i=0; i<=4; i++){
-       for(let j=0; j<=i; j++){
-        if(this.first[i]===this.second[j]){
-          console.log(first[j])
-        }
-       }
-    }
-  }
-}
-let finalValues = new main ([1,2,3,4],[1,2])
-finalValues.informtion()
