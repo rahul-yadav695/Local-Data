@@ -21,7 +21,8 @@ function getMobileNumberFromInput() {
     input.classList.remove("form-control-active");
     input.classList.add("form-control-after");
 
-  } 
+  }
+  console.log(value[0]);
 
   let password = document.getElementById("password")
   let passwordValue = password.value;
