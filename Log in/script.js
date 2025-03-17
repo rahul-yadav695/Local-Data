@@ -13,14 +13,13 @@ function getMobileNumberFromInput() {
     alert("Mobile number must be of 10 digit");
 
   } else if (value[0] != "9" && value[0] != "8" && value[0] != "7" && value[0] != "6") {
-    alert("Moblie number must start with 9,8,7 or 6");
     input.classList.remove("form-control-active");
     input.focus();
     input.classList.add("form-control-after");
+    alert(`Moblie number must start with ${9},${8},${7} or ${6}`);
   } else {
     input.classList.remove("form-control-active");
-    input.classList.add("form-control-after");
-
+    input.classList.add("form-control-after"); 
   }
   console.log(value[0]);
 
