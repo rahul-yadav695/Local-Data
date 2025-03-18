@@ -24,6 +24,7 @@ function getMobileNumberFromInput() {
   console.log(value[0]);
 
   let password = document.getElementById("password")
+  
   let passwordValue = password.value;
   if (passwordValue.length <= 8) {
     alert("please 8 character add me");
