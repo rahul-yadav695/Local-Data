@@ -88,20 +88,18 @@
 // let value = new arr("rahulyadav")
 // value.intro()
 
-
 class Main {
-  constructor(FirstValue,SecondValue){
-    this.FirstValue = FirstValue
-    this.SecondValue = SecondValue
+  constructor(value1, value2) {
+    this.value1 = value1
+    this.value2 = value2
   }
 
-  
-  FinalValues(){
+  printvalue(){
     let newarr = []
-    for(let i=0; i<this.FirstValue.length; i++){
-      for(let j=0; j<this.SecondValue.length; j++){
-        if(this.FirstValue[i]==this.SecondValue[j]){
-          newarr.push(this.FirstValue[j])
+    for(let i=0; i<this.value1.length; i++){
+      for(let j=0; j<this.value2.length; j++){
+        if(this.value1[i]==this.value2[j]){
+          newarr.push(this.value1[j])
         }
       }
     }
@@ -109,30 +107,30 @@ class Main {
   }
 }
 
-let last = new Main ([1,2,3,4],[2,3])
-last.FinalValues()
-// let finalarr = last.FinalValues()
-// console.log(finalarr);
- 
+let finalarr = new Main ([1,2,3,4],[1,3])
+finalarr.printvalue()
 
 
 
-class MaxValue{
-  constructor(num,num2){
+
+
+
+class MaxValue {
+  constructor(num, num2) {
     this.num = num
     this.num2 = num2
   }
 
-  print(){
+  print() {
     let max = 0
-    for(let i=0; i<this.num.length; i++){
-      if(this.num[i]>max){
-        max=this.num[i]
+    for (let i = 0; i < this.num.length; i++) {
+      if (this.num[i] > max) {
+        max = this.num[i]
       }
     }
     console.log(max)
   }
 }
 
-let final = new MaxValue([10,20,55,65,13,16,78])
+let final = new MaxValue([10, 20, 55, 65, 13, 16, 78])
 final.print()
