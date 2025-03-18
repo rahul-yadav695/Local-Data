@@ -19,19 +19,19 @@ function getMobileNumberFromInput() {
     alert(`Moblie number must start with ${9},${8},${7} or ${6}`);
   } else {
     input.classList.remove("form-control-active");
-    input.classList.add("form-control-after"); 
+    input.classList.add("form-control-after");
   }
   console.log(value[0]);
 
   let password = document.getElementById("password")
-  
+
   let passwordValue = password.value;
   if (passwordValue.length <= 8) {
     alert("please 8 character add me");
   } else if (passwordValue.length > 15) {
     alert("please 15 under password used  try again later")
   }
-   
+
 }
 
 
@@ -72,13 +72,13 @@ function SigninPage(Mobile, Password) {
       } else if (!result.success) {
         alert("Something Went Wrong Please Try Again Later")
         console.log("ere");
-        
+
       }
     })
     .catch((error) => console.log(error));
 }
 
-let submit_button =document.getElementById("main-buton").addEventListener("click",()=>{
+let submit_button = document.getElementById("main-buton").addEventListener("click", () => {
   getMobileNumberFromInput()
 })
 
