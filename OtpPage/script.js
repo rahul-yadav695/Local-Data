@@ -319,32 +319,41 @@ if (!uuid) {
 
 
 
-for(let i = 1; i<=6; i++){
+for (let i = 1; i <= 6; i++) {
     let otp = `otp-${[i]}`
     let Values = document.getElementById(otp)
-    Values.addEventListener('input',(e)=>{
-        if(e.target.value.length > 1){
+    Values.addEventListener('input', (e) => {
+        if (e.target.value.length > 1) {
             document.getElementById(`otp${[i]}`).value = e.target.value[0]
-        }else if(e.target.value.length === 1){
+        } else if (e.target.value.length === 1) {
             document.getElementById(`otp-${[i]}`).blur()
-            document.getElementById(`otp-${[i+1]}`).focus()
-        }else if(e.target.value.length === 0){
-            document.getElementById(`otp-${[i+1]}`).blur()
+            document.getElementById(`otp-${[i + 1]}`).focus()
+        } else if (e.target.value.length === 0) {
+            document.getElementById(`otp-${[i + 1]}`).blur()
             document.getElementById(`otp-${[i]}`).focus()
         }
     })
-    Values.addEventListener('keydown', function (e){
-        if(e.key === "Backspace" && e.target.value.length==0){
+    Values.addEventListener('keydown', function (e) {
+        if (e.key === "Backspace" && e.target.value.length == 0) {
             document.getElementById(`otp-${[i]}`).blur()
-            document.getElementById(`otp-${[i-1]}`).focus()
+            document.getElementById(`otp-${[i - 1]}`).focus()
         }
     })
 }
 
 
-function SetTimer(counter){
-    let minutes = Math.floor(counter/60)
-    let seconds = Math.floor(counter%60)
-    let timer = document.getElementById("timer")
-    timer.innerText = `${minutes}:${seconds}${seconds*60}`
+function SetTimer(counter) {
+  let interval =setInterval(() => {
+        let minutes = Math.floor(counter / 60)
+        let seconds = Math.floor(counter % 60)
+        let timer = document.getElementById("timer")
+        timer.innerText = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`; 
+    }, 1000);
+    if(counter>1){
+        clearInterval(interval)
+    }
 }
+
+
+
+ 

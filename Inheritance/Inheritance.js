@@ -159,31 +159,59 @@
 
 
 
-class User {
-  constructor(username){
-    this.username = username
-  }
+// class User {
+//   constructor(username){
+//     this.username = username
+//   }
 
-  logme(){
-    console.log(`username:-${this.username}`)
-  }
-} 
+//   logme(){
+//     console.log(`username:-${this.username}`)
+//   }
+// } 
 
-class Teacher extends User {
-  constructor(username,email,password){
-    super(username)
-    this.email = email 
-    this.password =password
-  }
+// class Teacher extends User {
+//   constructor(username,email,password){
+//     super(username)
+//     this.email = email 
+//     this.password =password
+//   }
 
-  course(){
-    console.log(`the username:-${this.username}`)
-  }
+//   course(){
+//     console.log(`the username:-${this.username}`)
+//   }
  
-}
+// }
 
-let newarr = new Teacher("Ankit","ankit@gmail.com",123)
-newarr.id()
+// let newarr = new Teacher("Ankit","ankit@gmail.com",123)
+// newarr.id()
 
 // console.log(Teacher==User)
 
+
+class New{
+  constructor(username) {
+    this.username = username
+  }
+
+  logMe(){
+    console.log(`Username:-${this.username}`)
+  }
+  static logId(){
+    return 231
+  }
+}
+
+const rahul = new New ("rahul")
+// console.log(rahul.logId())
+
+class wordld extends New{
+  constructor(username,email){
+    super(username)
+    this.email = email 
+  }
+ 
+}
+const ip = new wordld("iphone","iphone@gmail.com")
+ip.logId()
+
+// console.log(logId()==logMe())
