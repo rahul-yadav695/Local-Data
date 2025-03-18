@@ -34,52 +34,52 @@ function getMobileNumberFromInput() {
 }
 
 
-// let FormInputValue = document.getElementById("signin-form")
-// function submitForm(event) {
-//   event.preventDefault();
+let FormInputValue = document.getElementById("signin-form")
+function submitForm(event) {
+  event.preventDefault();
 
-// }
-// FormInputValue.addEventListener('submit', submitForm)
+}
+FormInputValue.addEventListener('submit', submitForm)
 
-// let base_url = "http://localhost:3000";
+let base_url = "http://localhost:3000";
 
-// function SigninPage(Mobile, Password) {
-//   const myHeaders = new Headers();
-//   myHeaders.append("Content-Type", "application/json");
+function SigninPage(Mobile, Password) {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
 
-//   const raw = JSON.stringify({
-//     "Mobile": Mobile,
-//     "passwprd": Password
-//   });
+  const raw = JSON.stringify({
+    "Mobile": Mobile,
+    "passwprd": Password
+  });
 
-//   const requestOptions = {
-//     method: "POST",
-//     headers: myHeaders,
-//     body: raw,
-//     redirect: "follow"
-//   };
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+  };
 
-//   fetch(`${base_url}/api/v1/auth/signin/request`, requestOptions)
-//     .then((response) => response.json())
-//     .then((result) => {
-//       if (result.success && result.message === "Successfully completed the request" && result.data) {
-//         document.getElementById("Numbers").value = ""
-//         document.getElementById("password").value = ""
-//         localStorage.getItem("uuid", result.data)
-//         window.location.href = "/OtpPage/index.html"
+  fetch(`${base_url}/api/v1/auth/signin/request`, requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      if (result.success && result.message === "Successfully completed the request" && result.data) {
+        document.getElementById("Numbers").value = ""
+        document.getElementById("password").value = ""
+        localStorage.getItem("uuid", result.data)
+        window.location.href = "/OtpPage/index.html"
 
-//       } else if (!result.success) {
-//         alert("Something Went Wrong Please Try Again Later")
-//         console.log("ere");
+      } else if (!result.success) {
+        alert("Something Went Wrong Please Try Again Later")
+        console.log("ere");
         
-//       }
-//     })
-//     .catch((error) => console.log(error));
-// }
+      }
+    })
+    .catch((error) => console.log(error));
+}
 
-// let submit_button =document.getElementById("main-buton").addEventListener("click",()=>{
-//   getMobileNumberFromInput()
-// })
+let submit_button =document.getElementById("main-buton").addEventListener("click",()=>{
+  getMobileNumberFromInput()
+})
 
 // function getinputvalue() {
 //   let input = document.getElementById('Numbers')
