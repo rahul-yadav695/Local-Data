@@ -1,3 +1,10 @@
+"CLASS"
+"class ek blueprint hai jisme aap objects ko define karte ho. Class ke andar methods (functions) aur properties (variables) define ki ja sakti hain. Aap class ka use karke multiple objects create kar sakte ho, jisme har object apne respective data aur behavior ko hold karega."
+
+"Constructor"
+"Constructor ek special method hai jo class ke object ko initialize karne ke liye use hota hai. Jab aap new keyword se class ka object create karte ho, constructor automatically call ho jaata hai. Yeh object ke properties ko initialize karta hai."
+
+
 // class Car {
 //   constructor(brand) {
 //     this.carname = brand;
@@ -134,3 +141,21 @@ class MaxValue {
 
 let final = new MaxValue([10, 20, 55, 65, 13, 16, 78])
 final.print()
+
+
+1.
+
+class Names{
+  constructor(name){
+    this.name = name
+  } 
+  final(){
+    console.log(this.name.length)
+  }
+
+}
+let last = new Names("dsfdsf")
+last.final()
+
+
+
