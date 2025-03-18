@@ -95,67 +95,95 @@
 // let value = new arr("rahulyadav")
 // value.intro()
 
-class Main {
-  constructor(value1, value2) {
-    this.value1 = value1
-    this.value2 = value2
-  }
+// class Main {
+//   constructor(value1, value2) {
+//     this.value1 = value1
+//     this.value2 = value2
+//   }
 
-  printvalue(){
-    let newarr = []
-    for(let i=0; i<this.value1.length; i++){
-      for(let j=0; j<this.value2.length; j++){
-        if(this.value1[i]==this.value2[j]){
-          newarr.push(this.value1[j])
-        }
-      }
-    }
-    console.log(newarr)
-  }
-}
+//   printvalue(){
+//     let newarr = []
+//     for(let i=0; i<this.value1.length; i++){
+//       for(let j=0; j<this.value2.length; j++){
+//         if(this.value1[i]==this.value2[j]){
+//           newarr.push(this.value1[j])
+//         }
+//       }
+//     }
+//     console.log(newarr)
+//   }
+// }
 
-let finalarr = new Main ([1,2,3,4],[1,3])
-finalarr.printvalue()
-
-
+// let finalarr = new Main ([1,2,3,4],[1,3])
+// finalarr.printvalue()
 
 
 
 
-class MaxValue {
-  constructor(num, num2) {
-    this.num = num
-    this.num2 = num2
-  }
 
-  print() {
-    let max = 0
-    for (let i = 0; i < this.num.length; i++) {
-      if (this.num[i] > max) {
-        max = this.num[i]
-      }
-    }
-    console.log(max)
-  }
-}
 
-let final = new MaxValue([10, 20, 55, 65, 13, 16, 78])
-final.print()
+// class MaxValue {
+//   constructor(num, num2) {
+//     this.num = num
+//     this.num2 = num2
+//   }
+
+//   print() {
+//     let max = 0
+//     for (let i = 0; i < this.num.length; i++) {
+//       if (this.num[i] > max) {
+//         max = this.num[i]
+//       }
+//     }
+//     console.log(max)
+//   }
+// }
+
+// let final = new MaxValue([10, 20, 55, 65, 13, 16, 78])
+// final.print()
 
 
 1.
 
-class Names{
-  constructor(name){
-    this.name = name
-  } 
-  final(){
-    console.log(this.name.length)
+// class Names{
+//   constructor(name){
+//     this.name = name
+//   } 
+//   final(){
+//     console.log(this.name.length)
+//   }
+
+// }
+// let last = new Names("dsfdsf")
+// last.final()
+
+
+
+class User {
+  constructor(username){
+    this.username = username
   }
 
+  logme(){
+    console.log(`username:-${this.username}`)
+  }
+} 
+
+class Teacher extends User {
+  constructor(username,email,password){
+    super(username)
+    this.email = email 
+    this.password =password
+  }
+
+  course(){
+    console.log(`the username:-${this.username}`)
+  }
+ 
 }
-let last = new Names("dsfdsf")
-last.final()
 
+let newarr = new Teacher("Ankit","ankit@gmail.com",123)
+newarr.id()
 
+// console.log(Teacher==User)
 
