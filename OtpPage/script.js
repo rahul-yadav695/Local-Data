@@ -342,18 +342,18 @@ for (let i = 1; i <= 6; i++) {
 }
 
 
-function SetTimer(counter) {
-  let interval =setInterval(() => {
-        let minutes = Math.floor(counter / 60)
-        let seconds = Math.floor(counter % 60)
-        let timer = document.getElementById("timer")
-        timer.innerText = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`; 
+function StartTimer(counter){
+    let values = setInterval(() => {
+        let Minutes = Math.floor(counter/60)
+        let Seconds = Math.floor(counter%60)
+        let timer = document.getElementById('timer')
+        timer.innerText = `0${Minutes}:${Seconds<10?"0":""}${Seconds}`
+        if(counter<0){
+            clearInterval(values)
+        }
+        counter--
     }, 1000);
-    if(counter>1){
-        clearInterval(interval)
-    }
 }
-
-
-
+StartTimer(120)
  
+
