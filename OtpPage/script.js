@@ -318,6 +318,20 @@ if (!uuid) {
 
 
 
+// function StartTimer(counter) {
+//     let values = setInterval(() => {
+//         let Minutes = Math.floor(counter / 60)
+//         let Seconds = Math.floor(counter % 60)
+//         let timer = document.getElementById('timer')
+//         timer.innerText = `0${Minutes}:${Seconds < 10 ? "0" : ""}${Seconds}`
+//         counter--
+//         if (counter < 0) {
+//             clearInterval(values)
+//         }
+//     }, 1000);
+// }
+// StartTimer(120)
+
 
 for (let i = 1; i <= 6; i++) {
     let otp = `otp-${[i]}`
@@ -342,72 +356,57 @@ for (let i = 1; i <= 6; i++) {
 }
 
 
-// function StartTimer(counter) {
-//     let values = setInterval(() => {
-//         let Minutes = Math.floor(counter / 60)
-//         let Seconds = Math.floor(counter % 60)
-//         let timer = document.getElementById('timer')
-//         timer.innerText = `0${Minutes}:${Seconds < 10 ? "0" : ""}${Seconds}`
-//         counter--
-//         if (counter < 0) {
-//             clearInterval(values)
+
+// let timer;
+// let current_timer = 120 
+// function CreateTimer(counter) {
+//     clearInterval(timer) 
+//     let counter = setInterval(() => {
+//         let count_1 = Math.floor(counter/60)
+//         let count_2 = Math.floor(counter%60)
+//         let timer = document.getElementById("timer").disabled = true
+//         timer.innerText = `${count_1}:${count_2<10?"0":""}${count_2}`
+//         if(counter<=0){
+//             clearInterval(timer)
+//             document.getElementById('resend').disabled = false
+//             counter--
 //         }
 //     }, 1000);
 // }
-// StartTimer(120)
 
+// document.getElementById('resend').addEventListener('click',function(){
+//     CreateTimer(current_timer)
+//     disabled.current_timer = true
+// })
 
-let timer;
-let current_timer = 120 
-function CreateTimer(counter) {
-    clearInterval(timer) 
-    let counter = setInterval(() => {
-        let count_1 = Math.floor(counter/60)
-        let count_2 = Math.floor(counter%60)
-        let timer = document.getElementById("timer").disabled = true
-        timer.innerText = `${count_1}:${count_2<10?"0":""}${count_2}`
-        if(counter<=0){
-            clearInterval(timer)
-            document.getElementById('resend').disabled = false
-            counter--
-        }
-    }, 1000);
-}
-
-document.getElementById('resend').addEventListener('click',function(){
-    CreateTimer(current_timer)
-    disabled.current_timer = true
-})
-
-CreateTimer(120)
-
+// CreateTimer(120)
 
 
 // let timer;
-// let current_timer = 120;
+// let current_timer = 10;
 
 // function CreateTimer(counter) {
-//     clearInterval(timer); // Purane timer ko clear karna zaroori hai
+//     clearInterval(timer);   
 //     timer = setInterval(() => {
 //         let count_1 = Math.floor(counter / 60);
 //         let count_2 = Math.floor(counter % 60);
-//         let timerElement = document.getElementById("timer");
 
+//         let timerElement = document.getElementById("timer"); 
 //         timerElement.innerText = `${count_1}:${count_2 < 10 ? "0" : ""}${count_2}`;
-        
+
+//         document.getElementById('resend').disabled = true;  
+
 //         if (counter <= 0) {
 //             clearInterval(timer);
-//             document.getElementById("resend").disabled = false; // Resend button enable karein
+//             document.getElementById('resend').disabled = false;  
+//         } else {
+//             counter--;
 //         }
-
-//         counter--;
 //     }, 1000);
 // }
  
-// document.getElementById("resend").addEventListener("click", function() {
-//     this.disabled = true; // Button disable kar do
-//     CreateTimer(current_timer); // Naya timer start karo
+// document.getElementById('resend').addEventListener('click', function () {
+//     CreateTimer(current_timer);
 // });
-
-// // Pehle se ek baar timer start kar do
-// CreateTimer(current_timer);
+ 
+// CreateTimer(10);
