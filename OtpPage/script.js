@@ -374,3 +374,34 @@ StartTimer(120)
 //     }, 1000);
 // }
 // CreateTimer()
+
+
+let timer;
+let current_timer = 120;
+
+function CreateTimer(counter) {
+    clearInterval(timer); // Purane timer ko clear karna zaroori hai
+    timer = setInterval(() => {
+        let count_1 = Math.floor(counter / 60);
+        let count_2 = Math.floor(counter % 60);
+        let timerElement = document.getElementById("timer");
+
+        timerElement.innerText = `${count_1}:${count_2 < 10 ? "0" : ""}${count_2}`;
+        
+        if (counter <= 0) {
+            clearInterval(timer);
+            document.getElementById("resend").disabled = false; // Resend button enable karein
+        }
+
+        counter--;
+    }, 1000);
+}
+
+// Resend button click event
+document.getElementById("resend").addEventListener("click", function() {
+    this.disabled = true; // Button disable kar do
+    CreateTimer(current_timer); // Naya timer start karo
+});
+
+// Pehle se ek baar timer start kar do
+CreateTimer(current_timer);
