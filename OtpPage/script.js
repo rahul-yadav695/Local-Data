@@ -354,59 +354,31 @@ for (let i = 1; i <= 6; i++) {
         }
     })
 }
-
-
-
-// let timer;
-// let current_timer = 120 
-// function CreateTimer(counter) {
-//     clearInterval(timer) 
-//     let counter = setInterval(() => {
-//         let count_1 = Math.floor(counter/60)
-//         let count_2 = Math.floor(counter%60)
-//         let timer = document.getElementById("timer").disabled = true
-//         timer.innerText = `${count_1}:${count_2<10?"0":""}${count_2}`
-//         if(counter<=0){
-//             clearInterval(timer)
-//             document.getElementById('resend').disabled = false
-//             counter--
-//         }
-//     }, 1000);
-// }
-
-// document.getElementById('resend').addEventListener('click',function(){
-//     CreateTimer(current_timer)
-//     disabled.current_timer = true
-// })
-
-// CreateTimer(120)
-
-
-// let timer;
-// let current_timer = 10;
-
-// function CreateTimer(counter) {
-//     clearInterval(timer);   
-//     timer = setInterval(() => {
-//         let count_1 = Math.floor(counter / 60);
-//         let count_2 = Math.floor(counter % 60);
-
-//         let timerElement = document.getElementById("timer"); 
-//         timerElement.innerText = `${count_1}:${count_2 < 10 ? "0" : ""}${count_2}`;
-
-//         document.getElementById('resend').disabled = true;  
-
-//         if (counter <= 0) {
-//             clearInterval(timer);
-//             document.getElementById('resend').disabled = false;  
-//         } else {
-//             counter--;
-//         }
-//     }, 1000);
-// }
  
-// document.getElementById('resend').addEventListener('click', function () {
-//     CreateTimer(current_timer);
-// });
  
-// CreateTimer(10);
+
+let timer;
+let current_time = 120
+
+function GetCurrentTimer(counter) {
+    clearInterval(timer)
+    let timervalue = setInterval(() => {
+        let value_1 = Math.floor(counter / 60)
+        let value_2 = Math.floor(counter % 60)
+        let cart = document.getElementById("timer").disabled = true
+        cart.innerText = `${value_1}:${value_2<10?"0":""}${value_2}`
+
+        if(counter<=0){
+            clearInterval(timervalue)
+            document.getElementById('resend').disabled = false
+        }else{
+            counter--
+        }
+    }, 1000);
+}
+
+let last = document.getElementById("resend")
+last.addEventListener('click',function () {
+    GetCurrentTimer()
+})
+GetCurrentTimer(120)
