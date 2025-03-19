@@ -364,9 +364,9 @@ function CreateTimer(counter) {
     let counter = setInterval(() => {
         let count_1 = Math.floor(counter/60)
         let count_2 = Math.floor(counter%60)
-        let timer = document.getElementById("timer")
+        let timer = document.getElementById("timer").disabled = true
         timer.innerText = `${count_1}:${count_2<10?"0":""}${count_2}`
-        if(counter<0){
+        if(counter<=0){
             clearInterval(timer)
             document.getElementById('resend').disabled = false
             counter--
@@ -379,7 +379,7 @@ document.getElementById('resend').addEventListener('click',function(){
     disabled.current_timer = true
 })
 
-CreateTimer()
+CreateTimer(120)
 
 
 
