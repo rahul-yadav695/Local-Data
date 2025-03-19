@@ -5,13 +5,15 @@ function getMobileNumberFromInput() {
   let input = document.getElementById("Numbers");
   let value = input.value
   if (value.length != 10) {
+    
     console.log(input.classList[0], "i am rahul");
     input.classList.remove("form-control-active");
     input.focus();
     input.classList.add("form-control-after");
-
     alert("Mobile number must be of 10 digit");
-
+    
+    window.location.href = "/OtpPage/index.html"
+    
   } else if (value[0] != "9" && value[0] != "8" && value[0] != "7" && value[0] != "6") {
     input.classList.remove("form-control-active");
     input.focus();
@@ -20,8 +22,8 @@ function getMobileNumberFromInput() {
   } else {
     input.classList.remove("form-control-active");
     input.classList.add("form-control-after");
-  }
-  console.log(value[0]);
+  } 
+  console.log(value[0])
 
   let password = document.getElementById("password")
 

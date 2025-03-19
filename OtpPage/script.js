@@ -305,16 +305,16 @@ if (!uuid) {
 
 
 
-// let timer = document.getElementById('h1')
-// let counter = 120;
+let timer = document.getElementById('h1')
+let counter = 120;
 
-// setInterval(() => {
-//     counter--
-//     timer.innerText = counter
-//     if(counter>0){
-//         clearInterval(counter)
-//     }
-// },1000);
+setInterval(() => {
+    counter--
+    timer.innerText = counter
+    if(counter>0){
+        clearInterval(counter)
+    }
+},1000);
 
 
 
@@ -348,11 +348,10 @@ function StartTimer(counter){
         let Seconds = Math.floor(counter%60)
         let timer = document.getElementById('timer')
         timer.innerText = `0${Minutes}:${Seconds<10?"0":""}${Seconds}`
+        counter--
         if(counter<0){
             clearInterval(values)
         }
-        counter--
     }, 1000);
 }
 StartTimer(120)
-  

@@ -188,30 +188,63 @@
 // console.log(Teacher==User)
 
 
-class New{
-  constructor(username) {
-    this.username = username
-  }
+// class New{
+//   constructor(username) {
+//     this.username = username
+//   }
 
-  logMe(){
-    console.log(`Username:-${this.username}`)
-  }
-  static logId(){
-    return 231
-  }
-}
+//   logMe(){
+//     console.log(`Username:-${this.username}`)
+//   }
+//   static logId(){
+//     return 231
+//   }
+// }
 
-const rahul = new New ("rahul")
-// console.log(rahul.logId())
+// const rahul = new New ("rahul")
+// // console.log(rahul.logId())
 
-class wordld extends New{
-  constructor(username,email){
-    super(username)
-    this.email = email 
-  }
+// class wordld extends New{
+//   constructor(username,email){
+//     super(username)
+//     this.email = email 
+//   }
  
-}
-const ip = new wordld("iphone","iphone@gmail.com")
-ip.logId()
+// }
+// const ip = new wordld("iphone","iphone@gmail.com")
+// ip.logId()
 
 // console.log(logId()==logMe())
+
+
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  static hello() {  // static method 
+   return "hello!"
+  }
+}
+
+let mycar = new Car("Ford");
+console.log(mycar.hello())
+
+
+ 
+class print {
+  constructor(value,key){
+    this.value = value 
+    this.key = key 
+  }
+
+  hello(){
+    let arr = []
+    for(let i=0; i<this.value.length; i++){
+      if(Array.isArray(this.value[i])){
+        for(let j=0; j<this.key.length; j++){
+            
+        }
+      }
+    }
+  }
+}
