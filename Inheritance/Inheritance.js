@@ -231,28 +231,40 @@
 
 
  
-class print {
-  constructor(value,key){
-    this.value = value 
-    this.key = key 
-  }
+// class print {
+//   constructor(value,key){
+//     this.value = value 
+//     this.key = key 
+//   }
 
-  hello(){
-    let arr = []
-    for(let i=0; i<this.value.length; i++){
-      if(Array.isArray(this.value[i])){
-        for(let j=0; j<this.key.length; j++){
-            arr.push(this.value[i][j])
-        }
-      }else{
-        arr.push(this.value[i])
-      }
+//   hello(){
+//     let arr = []
+//     for(let i=0; i<this.value.length; i++){
+//       if(Array.isArray(this.value[i])){
+//         for(let j=0; j<this.key.length; j++){
+//             arr.push(this.value[i][j])
+//         }
+//       }else{
+//         arr.push(this.value[i])
+//       }
+//     }
+//     console.log(arr)
+//   }
+// }
+
+// let newcode = new print([1,2,3[4,5,6,7][8,9,10,11]])
+// newcode.hello()
+
+
+let Arr = [1,2,3[4,5,6,7][8,9,10,11]]
+let newarr = []
+for(let i=0; i<Arr.length; i++){
+  if(Array.isArray(Arr[i])){
+    for(let j=0; j<Arr[i].length; j++){
+      newarr.push(Arr[i][j])
     }
-    console.log(arr)
+  }else{
+    newarr.push(Arr[i])
   }
 }
-
-let newcode = new print([1,2,3[4,5,6,7][8,9,10,11]])
-newcode.hello()
-
-
+console.log(newarr)

@@ -305,16 +305,16 @@ if (!uuid) {
 
 
 
-let timer = document.getElementById('h1')
-let counter = 120;
+// let timer = document.getElementById('h1')
+// let counter = 120;
 
-setInterval(() => {
-    counter--
-    timer.innerText = counter
-    if(counter>0){
-        clearInterval(counter)
-    }
-},1000);
+// setInterval(() => {
+//     counter--
+//     timer.innerText = counter
+//     if(counter>0){
+//         clearInterval(counter)
+//     }
+// },1000);
 
 
 
@@ -342,16 +342,35 @@ for (let i = 1; i <= 6; i++) {
 }
 
 
-function StartTimer(counter){
+function StartTimer(counter) {
     let values = setInterval(() => {
-        let Minutes = Math.floor(counter/60)
-        let Seconds = Math.floor(counter%60)
+        let Minutes = Math.floor(counter / 60)
+        let Seconds = Math.floor(counter % 60)
         let timer = document.getElementById('timer')
-        timer.innerText = `0${Minutes}:${Seconds<10?"0":""}${Seconds}`
+        timer.innerText = `0${Minutes}:${Seconds < 10 ? "0" : ""}${Seconds}`
         counter--
-        if(counter<0){
+        if (counter < 0) {
             clearInterval(values)
         }
     }, 1000);
 }
 StartTimer(120)
+
+
+// let timer;
+// let current_timer = 120 
+// function CreateTimer(counter) {
+//     let values = document.getElementById('values')
+//     let counter = setInterval(() => {
+
+//         let count_1 = Math.floor(counter/60)
+//         let count_2 = Math.floor(counter%60)
+//         let timer = document.getElementById("timer")
+//         timer.innerText = `${count_1}:${count_2<10?"0":""}${count_2}`
+//         counter--
+//         if(counter>1){
+//             clearInterval(values)
+//         }
+//     }, 1000);
+// }
+// CreateTimer()
