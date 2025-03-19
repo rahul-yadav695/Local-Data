@@ -354,34 +354,31 @@ for (let i = 1; i <= 6; i++) {
         }
     })
 }
- 
- 
+
+
 
 var timer;
-var current_time = 10 
+var current_time = 110
 
 function GetCurrentTimer(counter) {
-    clearInterval(timer)``
-        timer = setInterval(() => {
+    clearInterval(timer)
+    timer = setInterval(() => {
         let value_1 = Math.floor(counter / 60)
-        let value_2 = Math.floor(counter % 60) 
-        let cart = document.getElementById("timer").disabled = true
-        cart.innerText = `${value_1}:${value_2<10?"0":""}${value_2}`
-        if(counter<=0){
+        let value_2 = Math.floor(counter % 60)
+        let cart = document.getElementById("timer")
+        cart.innerText = `${value_1}:${value_2 < 10 ? "0" : ""}${value_2}`
+        if (counter <= 0) {
             clearInterval(timervalue)
-            document.getElementById('resend').disabled =false
-        }else if(current_time){
-            
-        }else{
+            document.getElementById('resend')
+        } else {
             counter--
         }
     }, 1000);
 }
 let last = document.getElementById("resend")
-last.addEventListener('click',function () {
+last.addEventListener('click', function () {
     GetCurrentTimer(current_time)
 
 })
-GetCurrentTimer(10)
-
-
+GetCurrentTimer(110)
+ 
