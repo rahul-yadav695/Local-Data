@@ -57,3 +57,22 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.vb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    
+}
+.vb p{
+    font-size: 2rem;
+    background-color: #000;
+    padding: 10px;
+}
+.vb button {
+    width: 100px;
+    height: 35px;
+    background-color: blueviolet;
+    border: none !important;
+}

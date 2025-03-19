@@ -382,3 +382,18 @@ last.addEventListener('click', function () {
 })
 GetCurrentTimer(120)
  
+
+
+
+
+let button = document.getElementById("btn")
+function showtime(){
+    let current = new Date()
+    let time = `${current.getHours()}:${current.getMinutes()}:${current.getSeconds()}`
+    document.getElementById("tiime").innerHTML = time
+}
+// console.log("rahul")
+let result = setInterval(showtime,1000)
+document.addEventListener("click",()=>{
+    clearInterval(result)
+})
