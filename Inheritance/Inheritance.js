@@ -217,17 +217,17 @@
 // console.log(logId()==logMe())
 
 
-class Car {
-  constructor(brand) {
-    this.carname = brand;
-  }
-  static hello() {  // static method 
-   return "hello!"
-  }
-}
+// class Car {
+//   constructor(brand) {
+//     this.carname = brand;
+//   }
+//   static hello() {  // static method 
+//    return "hello!"
+//   }
+// }
 
-let mycar = new Car("Ford");
-console.log(mycar.hello())
+// let mycar = new Car("Ford");
+// console.log(mycar.hello())
 
 
  
@@ -242,9 +242,17 @@ class print {
     for(let i=0; i<this.value.length; i++){
       if(Array.isArray(this.value[i])){
         for(let j=0; j<this.key.length; j++){
-            
+            arr.push(this.value[i][j])
         }
+      }else{
+        arr.push(this.value[i])
       }
     }
+    console.log(arr)
   }
 }
+
+let newcode = new print([1,2,3[4,5,6,7][8,9,10,11]])
+newcode.hello()
+
+
