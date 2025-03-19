@@ -357,60 +357,31 @@ for (let i = 1; i <= 6; i++) {
  
  
 
-let timer;
-let current_time = 120
+var timer;
+var current_time = 10 
 
 function GetCurrentTimer(counter) {
-    clearInterval(timer)
-    let timervalue = setInterval(() => {
+    clearInterval(timer)``
+        timer = setInterval(() => {
         let value_1 = Math.floor(counter / 60)
-        let value_2 = Math.floor(counter % 60)
+        let value_2 = Math.floor(counter % 60) 
         let cart = document.getElementById("timer").disabled = true
         cart.innerText = `${value_1}:${value_2<10?"0":""}${value_2}`
-
         if(counter<=0){
             clearInterval(timervalue)
-            document.getElementById('resend').disabled = false
+            document.getElementById('resend').disabled =false
+        }else if(current_time){
+            
         }else{
             counter--
         }
     }, 1000);
 }
-
 let last = document.getElementById("resend")
 last.addEventListener('click',function () {
     GetCurrentTimer(current_time)
+
 })
-GetCurrentTimer(120)
+GetCurrentTimer(10)
 
 
-let timer;
-let current_time = 120;
-
-function GetCurrentTimer(counter) {
-    clearInterval(timer);  // Clears the previous interval before starting a new one.
-
-    timer = setInterval(() => {  // Assign the interval to 'timer'
-        let value_1 = Math.floor(counter / 60);
-        let value_2 = counter % 60;
-        
-        // Fix: Get the button element first, then disable it
-        let cart = document.getElementById("timer");
-        cart.disabled = true;  
-        cart.innerText = `${value_1}:${value_2 < 10 ? "0" : ""}${value_2}`;
-
-        if (counter <= 0) {
-            clearInterval(timer);
-            document.getElementById("resend").disabled = false;
-        } else {
-            counter--;
-        }
-    }, 1000);
-}
-
-document.getElementById("resend").addEventListener("click", function () {
-    GetCurrentTimer(current_time);
-});
-
-// Start the timer when the page loads
-GetCurrentTimer(120);
