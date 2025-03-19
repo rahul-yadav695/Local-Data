@@ -342,66 +342,72 @@ for (let i = 1; i <= 6; i++) {
 }
 
 
-function StartTimer(counter) {
-    let values = setInterval(() => {
-        let Minutes = Math.floor(counter / 60)
-        let Seconds = Math.floor(counter % 60)
-        let timer = document.getElementById('timer')
-        timer.innerText = `0${Minutes}:${Seconds < 10 ? "0" : ""}${Seconds}`
-        counter--
-        if (counter < 0) {
-            clearInterval(values)
-        }
-    }, 1000);
-}
-StartTimer(120)
-
-
-// let timer;
-// let current_timer = 120 
-// function CreateTimer(counter) {
-//     let values = document.getElementById('values')
-//     let counter = setInterval(() => {
-
-//         let count_1 = Math.floor(counter/60)
-//         let count_2 = Math.floor(counter%60)
-//         let timer = document.getElementById("timer")
-//         timer.innerText = `${count_1}:${count_2<10?"0":""}${count_2}`
+// function StartTimer(counter) {
+//     let values = setInterval(() => {
+//         let Minutes = Math.floor(counter / 60)
+//         let Seconds = Math.floor(counter % 60)
+//         let timer = document.getElementById('timer')
+//         timer.innerText = `0${Minutes}:${Seconds < 10 ? "0" : ""}${Seconds}`
 //         counter--
-//         if(counter>1){
+//         if (counter < 0) {
 //             clearInterval(values)
 //         }
 //     }, 1000);
 // }
-// CreateTimer()
+// StartTimer(120)
 
 
 let timer;
-let current_timer = 120;
-
+let current_timer = 120 
 function CreateTimer(counter) {
-    clearInterval(timer); // Purane timer ko clear karna zaroori hai
-    timer = setInterval(() => {
-        let count_1 = Math.floor(counter / 60);
-        let count_2 = Math.floor(counter % 60);
-        let timerElement = document.getElementById("timer");
-
-        timerElement.innerText = `${count_1}:${count_2 < 10 ? "0" : ""}${count_2}`;
-        
-        if (counter <= 0) {
-            clearInterval(timer);
-            document.getElementById("resend").disabled = false; // Resend button enable karein
+    clearInterval(timer) 
+    let counter = setInterval(() => {
+        let count_1 = Math.floor(counter/60)
+        let count_2 = Math.floor(counter%60)
+        let timer = document.getElementById("timer")
+        timer.innerText = `${count_1}:${count_2<10?"0":""}${count_2}`
+        if(counter<0){
+            clearInterval(timer)
+            document.getElementById('resend').disabled = false
+            counter--
         }
-
-        counter--;
     }, 1000);
 }
 
-// Resend button click event
-document.getElementById("resend").addEventListener("click", function() {
-    this.disabled = true; // Button disable kar do
-    CreateTimer(current_timer); // Naya timer start karo
-});
+document.getElementById('resend').addEventListener('click',function(){
+    CreateTimer(current_timer)
+    disabled.current_timer = true
+})
 
-// Pehle se ek baar timer start kar do
-CreateTimer(current_timer);
+CreateTimer()
+
+
+
+// let timer;
+// let current_timer = 120;
+
+// function CreateTimer(counter) {
+//     clearInterval(timer); // Purane timer ko clear karna zaroori hai
+//     timer = setInterval(() => {
+//         let count_1 = Math.floor(counter / 60);
+//         let count_2 = Math.floor(counter % 60);
+//         let timerElement = document.getElementById("timer");
+
+//         timerElement.innerText = `${count_1}:${count_2 < 10 ? "0" : ""}${count_2}`;
+        
+//         if (counter <= 0) {
+//             clearInterval(timer);
+//             document.getElementById("resend").disabled = false; // Resend button enable karein
+//         }
+
+//         counter--;
+//     }, 1000);
+// }
+ 
+// document.getElementById("resend").addEventListener("click", function() {
+//     this.disabled = true; // Button disable kar do
+//     CreateTimer(current_timer); // Naya timer start karo
+// });
+
+// // Pehle se ek baar timer start kar do
+// CreateTimer(current_timer);
