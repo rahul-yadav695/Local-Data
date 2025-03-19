@@ -358,7 +358,7 @@ for (let i = 1; i <= 6; i++) {
 
 
 var timer;
-var current_time = 110
+var current_time = 120
 
 function GetCurrentTimer(counter) {
     clearInterval(timer)
@@ -380,5 +380,5 @@ last.addEventListener('click', function () {
     GetCurrentTimer(current_time)
 
 })
-GetCurrentTimer(110)
+GetCurrentTimer(120)
  
