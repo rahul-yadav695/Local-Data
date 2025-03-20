@@ -357,43 +357,48 @@ for (let i = 1; i <= 6; i++) {
 
 
 
-var timer;
-var current_time = 120
-
-function GetCurrentTimer(counter) {
+let timer;
+let current_time = 120
+function current_timeer(count) {
     clearInterval(timer)
-    timer = setInterval(() => {
-        let value_1 = Math.floor(counter / 60)
-        let value_2 = Math.floor(counter % 60)
-        let cart = document.getElementById("timer")
-        cart.innerText = `${value_1}:${value_2 < 10 ? "0" : ""}${value_2}`
-        if (counter <= 0) {
-            clearInterval(timervalue)
+        timer = setInterval(() => {
+        let Minutes = Math.floor(count / 60)
+        let Seconds = Math.floor(count % 60)
+        let time_curr = document.getElementById('timer')
+        time_curr.innerText = `${Minutes}:${Seconds < 10 ? "0" : ""}${Seconds}`
+
+        if (count <= 0) {
+            clearInterval(timer)
             document.getElementById('resend')
-        } else {
-            counter--
+        }else{
+            count--
         }
     }, 1000);
 }
-let last = document.getElementById("resend")
-last.addEventListener('click', function () {
-    GetCurrentTimer(current_time)
 
+document.getElementById("resend").addEventListener('click', function () {
+    current_timeer(current_time)
 })
-GetCurrentTimer(120)
- 
+
+current_timeer(120)
 
 
 
 
-let button = document.getElementById("btn")
-function showtime(){
-    let current = new Date()
-    let time = `${current.getHours()}:${current.getMinutes()}:${current.getSeconds()}`
-    document.getElementById("tiime").innerHTML = time
-}
-// console.log("rahul")
-let result = setInterval(showtime,1000)
-document.addEventListener("click",()=>{
-    clearInterval(result)
-})
+
+
+
+
+
+// let button = document.getElementById("btn")
+// function showtime(){
+//     let current = new Date()
+//     let time = `${current.getHours()}:${current.getMinutes()}:${current.getSeconds()}`
+//     document.getElementById("tiime").innerHTML = time
+// }
+// // console.log("rahul")
+// let result = setInterval(showtime,1000)
+// document.addEventListener("click",()=>{
+//     clearInterval(result)
+// })
+
