@@ -1,7 +1,7 @@
 
 let uuid = localStorage.getItem("uuid")
 if (!uuid) {
-    window.location.href = "/Log in"
+    // window.location.href = "/Log in"
 }
 // document.addEventListener("DOMContentLoaded", function () {
 //     const inputs = document.querySelectorAll(".otp-input");
@@ -358,7 +358,7 @@ for (let i = 1; i <= 6; i++) {
 
 
 let timer;
-let current_time = 120
+let current_time = 3
 function current_timeer(count) {
     clearInterval(timer)
         timer = setInterval(() => {
@@ -372,6 +372,10 @@ function current_timeer(count) {
             document.getElementById('resend')
         }else{
             count--
+        }if(count>=1){
+            document.getElementById("resend").disabled = true
+        }else{
+            document.getElementById("resend").disabled = false
         }
     }, 1000);
 }
@@ -380,7 +384,8 @@ document.getElementById("resend").addEventListener('click', function () {
     current_timeer(current_time)
 })
 
-current_timeer(120)
+current_timeer(3)
+
 
 
 

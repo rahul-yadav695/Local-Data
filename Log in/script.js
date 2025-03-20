@@ -19,7 +19,7 @@ function getMobileNumberFromInput() {
     input.classList.add("form-control-after");
     alert(`Moblie number must start with ${9},${8},${7} or ${6}`);
   } else if(value.length==10){
-    window.location.href = "/OtpPage/index.html"
+    // window.location.href = "/OtpPage/index.html"
   } else{
     input.classList.remove("form-control-active");
     input.classList.add("form-control-after");
@@ -45,7 +45,7 @@ function submitForm(event) {
 }
 FormInputValue.addEventListener('submit', submitForm)
 
-let base_url = "http://localhost:3000";
+// let base_url = "http://localhost:3000";
 
 function SigninPage(Mobile, Password) {
   const myHeaders = new Headers();
@@ -70,7 +70,7 @@ function SigninPage(Mobile, Password) {
         document.getElementById("Numbers").value = ""
         document.getElementById("password").value = ""
         localStorage.getItem("uuid", result.data)
-        window.location.href = "/OtpPage/index.html"
+        // window.location.href = "/OtpPage/index.html"
 
       } else if (!result.success) {
         alert("Something Went Wrong Please Try Again Later")
