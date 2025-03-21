@@ -68,26 +68,26 @@
 // pro.then((data)=> console.log(data.price+4100))
 // .catch((err) => console.log(err.price-1200))
 
+ 
 
+// class MaxNamber {
+//     constructor(key, arr) {
+//         this.key = key
+//         this.arr = arr
+//     }
 
-class MaxNamber {
-    constructor(key, arr) {
-        this.key = key
-        this.arr = arr
-    }
+//     print() {
+//         let newarr = []
+//         for (let i = 0; i < this.key.length; i++) {
+//             for (let j = 0; j < this.key[i]; j++) {
+//                 if (this.key[i]>this.arr[j]) {
+//                     newarr.push(this.key[j])
+//                 }
+//             }
+//         }
+//         console.log(newarr)
+//     }
+// }
 
-    print() {
-        let newarr = []
-        for (let i = 0; i < this.key.length; i++) {
-            for (let j = 0; j < this.key[i]; j++) {
-                if (this.key[i]>this.arr[j]) {
-                    newarr.push(this.key[j])
-                }
-            }
-        }
-        console.log(newarr)
-    }
-}
-
-let newarr = new MaxNamber([10, 20, 30, 2, 55, 45, 78, 12])
-newarr.print()
+// let newarr = new MaxNamber([10, 20, 30, 2, 55, 45, 78, 12])
+// newarr.print()
