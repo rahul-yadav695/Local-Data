@@ -19,7 +19,7 @@ function getMobileNumberFromInput() {
     input.classList.add("form-control-after");
     alert(`Moblie number must start with ${9},${8},${7} or ${6}`);
   } else if (value.length == 10) {
-    // window.location.href = "/OtpPage/index.html"
+    window.location.href = "/OtpPage/index.html"
   } else {
     input.classList.remove("form-control-active");
     input.classList.add("form-control-after");
