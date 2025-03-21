@@ -218,3 +218,10 @@ createValue();
 
 
 
+
+let chai = {
+  name:"mahesvri",
+  price:350,
+  isAvailable : true
+}
+console.log(Object.getOwnPropertyDescriptor(chai,"name"))
