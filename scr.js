@@ -92,11 +92,12 @@
 // let newarr = new MaxNamber([10, 20, 30, 2, 55, 45, 78, 12])
 // newarr.print()
 
-const person = {
-    name: 'GFG',
-    greet: function() {
-        console.log(`Hello!${this.name}`);
-    }
-};
-const greet = person.greet;
-greet(); 
+// const person = {
+//     name: 'GFG',
+//     greet: function() {
+//         console.log(`Hello!${this.name}`);
+//     }
+// };
+// const greet = person.greet;
+// greet();
+
