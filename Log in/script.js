@@ -38,77 +38,77 @@ function getMobileNumberFromInput() {
 }
 
 
-let FormInputValue = document.getElementById("signin-form")
-function submitForm(event) {
-  event.preventDefault();
+// let FormInputValue = document.getElementById("signin-form")
+// function submitForm(event) {
+//   event.preventDefault();
 
-}
-FormInputValue.addEventListener('submit', submitForm)
+// }
+// FormInputValue.addEventListener('submit', submitForm)
 
-// let base_url = "http://localhost:3000";
+// // let base_url = "http://localhost:3000";
 
-function SigninPage(Mobile, Password) {
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
+// function SigninPage(Mobile, Password) {
+//   const myHeaders = new Headers();
+//   myHeaders.append("Content-Type", "application/json");
 
-  const raw = JSON.stringify({
-    "Mobile": Mobile,
-    "passwprd": Password
-  });
+//   const raw = JSON.stringify({
+//     "Mobile": Mobile,
+//     "passwprd": Password
+//   });
 
-  const requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow"
-  };
+//   const requestOptions = {
+//     method: "POST",
+//     headers: myHeaders,
+//     body: raw,
+//     redirect: "follow"
+//   };
 
-  fetch(`${base_url}/api/v1/auth/signin/request`, requestOptions)
-    .then((response) => response.json())
-    .then((result) => {
-      if (result.success && result.message === "Successfully completed the request" && result.data) {
-        document.getElementById("Numbers").value = ""
-        document.getElementById("password").value = ""
-        localStorage.getItem("uuid", result.data)
-        // window.location.href = "/OtpPage/index.html"
+//   fetch(`${base_url}/api/v1/auth/signin/request`, requestOptions)
+//     .then((response) => response.json())
+//     .then((result) => {
+//       if (result.success && result.message === "Successfully completed the request" && result.data) {
+//         document.getElementById("Numbers").value = ""
+//         document.getElementById("password").value = ""
+//         localStorage.getItem("uuid", result.data)
+//         // window.location.href = "/OtpPage/index.html"
 
-      } else if (!result.success) {
-        alert("Something Went Wrong Please Try Again Later")
-        console.log("ere");
+//       } else if (!result.success) {
+//         alert("Something Went Wrong Please Try Again Later")
+//         console.log("ere");
 
-      }
-    })
-    .catch((error) => console.log(error));
-}
+//       }
+//     })
+//     .catch((error) => console.log(error));
+// }
 
-let submit_button = document.getElementById("main-buton").addEventListener("click", () => {
-  getMobileNumberFromInput()
-})
+// let submit_button = document.getElementById("main-buton").addEventListener("click", () => {
+//   getMobileNumberFromInput()
+// })
 
-function getinputvalue() {
-  let input = document.getElementById('Numbers')
-  let value = input.value
+// function getinputvalue() {
+//   let input = document.getElementById('Numbers')
+//   let value = input.value
 
-  if (value.length != 10) {
-    console.log(input.classList[0])
-    input.classList.remove('form-control-after')
-    input.focus()
-    input.classList.add('form-control-active')
+//   if (value.length != 10) {
+//     console.log(input.classList[0])
+//     input.classList.remove('form-control-after')
+//     input.focus()
+//     input.classList.add('form-control-active')
 
-    alert('Enter 10 Digit number')
+//     alert('Enter 10 Digit number')
 
-  } else if (value[0] != "6" && value[0] != "7" && value[0] != "8" && value[0] != "9") {
-    alert("Enter Digit Number 6,7,8,9")
-    input.classList.remove("form-control-after")
-    input.focus()
-    input.classList.add('form-control-active')
-  } else {
-    input.classList.remove('form-control-after')
-    input.classList.add('form-control-active')
-  }
+//   } else if (value[0] != "6" && value[0] != "7" && value[0] != "8" && value[0] != "9") {
+//     alert("Enter Digit Number 6,7,8,9")
+//     input.classList.remove("form-control-after")
+//     input.focus()
+//     input.classList.add('form-control-active')
+//   } else {
+//     input.classList.remove('form-control-after')
+//     input.classList.add('form-control-active')
+//   }
 
-  console.log(value[0])
-}
+//   console.log(value[0])
+// }
 
 
 // let password = document.getElementById("password")
