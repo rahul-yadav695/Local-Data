@@ -361,7 +361,7 @@ let timer;
 let current_time = 3
 function current_timeer(count) {
     clearInterval(timer)
-        timer = setInterval(() => {
+    timer = setInterval(() => {
         let Minutes = Math.floor(count / 60)
         let Seconds = Math.floor(count % 60)
         let time_curr = document.getElementById('timer')
@@ -370,11 +370,11 @@ function current_timeer(count) {
         if (count <= 0) {
             clearInterval(timer)
             document.getElementById('resend')
-        }else{
+        } else {
             count--
-        }if(count>=1){
+        } if (count >= 1) {
             document.getElementById("resend").disabled = true
-        }else{
+        } else {
             document.getElementById("resend").disabled = false
         }
     }, 1000);
