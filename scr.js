@@ -1,4 +1,4 @@
- 
+
 
 // let obj = {}
 
@@ -8,12 +8,12 @@
 //     fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
 //         .then((data) => {
 //             return data.json()
-            
+
 //         })
 //         .then((data) => {
 //             obj = data.bpi
 //             console.log(data)
-                
+
 //         row.innerHTML = `  
 //             <div class="col-lg-12">
 //                 <div>
@@ -46,7 +46,7 @@
 //         .catch((err) => {
 //             console.log(err)
 //             row.innerHTML = '<h1>Something Went Wrong Please Try Again</h1>'
-            
+
 //         })
 // }
 
@@ -67,3 +67,27 @@
 // })
 // pro.then((data)=> console.log(data.price+4100))
 // .catch((err) => console.log(err.price-1200))
+
+
+
+class MaxNamber {
+    constructor(key, arr) {
+        this.key = key
+        this.arr = arr
+    }
+
+    print() {
+        let newarr = []
+        for (let i = 0; i < this.key.length; i++) {
+            for (let j = 0; j < this.key[i]; j++) {
+                if (this.key[i]>this.arr[j]) {
+                    newarr.push(this.key[j])
+                }
+            }
+        }
+        console.log(newarr)
+    }
+}
+
+let newarr = new MaxNamber([10, 20, 30, 2, 55, 45, 78, 12])
+newarr.print()
