@@ -5,22 +5,22 @@ function getMobileNumberFromInput() {
   let input = document.getElementById("Numbers");
   let value = input.value
   if (value.length != 10) {
-    
+
     console.log(input.classList[0], "i am rahul");
     input.classList.remove("form-control-active");
     input.focus();
     input.classList.add("form-control-after");
     alert("Mobile number must be of 10 digit");
-    
-    
+
+
   } else if (value[0] != "9" && value[0] != "8" && value[0] != "7" && value[0] != "6") {
     input.classList.remove("form-control-active");
     input.focus();
     input.classList.add("form-control-after");
     alert(`Moblie number must start with ${9},${8},${7} or ${6}`);
-  } else if(value.length==10){
+  } else if (value.length == 10) {
     // window.location.href = "/OtpPage/index.html"
-  } else{
+  } else {
     input.classList.remove("form-control-active");
     input.classList.add("form-control-after");
   }
@@ -163,19 +163,19 @@ let submit_button = document.getElementById("main-buton").addEventListener("clic
 // }
 
 
- 
-let arr =[1,2,[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]];
-let newarr = []; 
-for(let i=0; i<arr.length; i++){
-    if(Array.isArray(arr[i])){
-        for(let j=0; j<arr[i].length; j++){
-            newarr.push(arr[i][j])
-        }
-    }else{
-        newarr.push(arr[i])
+
+let arr = [1, 2, [1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]];
+let newarr = [];
+for (let i = 0; i < arr.length; i++) {
+  if (Array.isArray(arr[i])) {
+    for (let j = 0; j < arr[i].length; j++) {
+      newarr.push(arr[i][j])
     }
+  } else {
+    newarr.push(arr[i])
+  }
 }
-console.log(newarr) 
+console.log(newarr)
 
 
 
