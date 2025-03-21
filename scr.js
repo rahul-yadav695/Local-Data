@@ -54,3 +54,16 @@
 // setTimeout(() => {
 //     getApi()
 // }, 2000);
+
+
+// let obj = {name:"vivo",price:12000}
+// let count = true
+// let pro = new Promise((resolve,reject)=>{
+//     if(count && obj.price %2===0){
+//         resolve({name:"oppo",price:10900})
+//     }else{
+//         reject({name:"oppo",price:10900})
+//     }
+// })
+// pro.then((data)=> console.log(data.price+4100))
+// .catch((err) => console.log(err.price-1200))
