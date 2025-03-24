@@ -358,7 +358,7 @@ for (let i = 1; i <= 6; i++) {
 
 
 let timer;
-let current_time = 130
+let current_time = 120
 function current_timeer(count) {
     clearInterval(timer)
     timer = setInterval(() => {
@@ -384,7 +384,7 @@ document.getElementById("resend").addEventListener('click', function () {
     current_timeer(current_time)
 })
 
-current_timeer(130)
+current_timeer(120)
 
 
 
