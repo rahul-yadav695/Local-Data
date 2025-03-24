@@ -179,7 +179,7 @@
 //   course(){
 //     console.log(`the username:-${this.username}`)
 //   }
- 
+
 // }
 
 // let newarr = new Teacher("Ankit","ankit@gmail.com",123)
@@ -209,7 +209,7 @@
 //     super(username)
 //     this.email = email 
 //   }
- 
+
 // }
 // const ip = new wordld("iphone","iphone@gmail.com")
 // ip.logId()
@@ -230,42 +230,53 @@
 // console.log(mycar.hello())
 
 
- 
-class print {
-  constructor(value,key){
-    this.value = value 
-    this.key = key 
-  }
 
-  hello(){
-    let arr = []
-    for(let i=0; i<this.value.length; i++){
-      if(Array.isArray(this.value[i])){
-        for(let j=0; j<this.key.length; j++){
-            arr.push(this.value[i][j])
-        }
-      }else{
-        arr.push(this.value[i])
-      }
-    }
-    console.log(arr)
-  }
-}
+// class print {
+//   constructor(value,key){
+//     this.value = value 
+//     this.key = key 
+//   }
 
-let newcode = new print([1,2,3[4,5,6,7][8,9,10,11]])
-newcode.hello()
+//   hello(){
+//     let arr = []
+//     for(let i=0; i<this.value.length; i++){
+//       if(Array.isArray(this.value[i])){
+//         for(let j=0; j<this.key.length; j++){
+//             arr.push(this.value[i][j])
+//         }
+//       }else{
+//         arr.push(this.value[i])
+//       }
+//     }
+//     console.log(arr)
+//   }
+// }
+
+// let newcode = new print([1,2,3[4,5,6,7][8,9,10,11]])
+// newcode.hello()
 
 
-let Arr = [1,2,3[4,5,6,7][8,9,10,11]]
-let newarr = []
-for(let i=0; i<Arr.length; i++){
-  if(Array.isArray(Arr[i])){
-    for(let j=0; j<Arr[i].length; j++){
-      newarr.push(Arr[i][j])
-    }
-  }else{
-    newarr.push(Arr[i])
-  }
-}
-console.log(newarr)
+// let Arr = [1,2,3[4,5,6,7][8,9,10,11]]
+// let newarr = []
+// for(let i=0; i<Arr.length; i++){
+//   if(Array.isArray(Arr[i])){
+//     for(let j=0; j<Arr[i].length; j++){
+//       newarr.push(Arr[i][j])
+//     }
+//   }else{
+//     newarr.push(Arr[i])
+//   }
+// }
+// console.log(newarr)
 
+
+// function val() {
+//     for (let i = 1; i <= val; i++) {
+//         temp = ""
+//         for (let j = 1; j <= i; j++) {
+//             temp += j + " "
+//         }
+//     }
+//     console.log(temp)
+// }
+// val(10)
