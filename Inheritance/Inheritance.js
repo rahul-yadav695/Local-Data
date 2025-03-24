@@ -303,28 +303,28 @@
 // Final_value.hello();
 
 
-class first {
-    constructor(name){
-        this.name = name
-    }
-    hello(){
-        console.log('vikas')
-    }
-}
+// class first {
+//     constructor(name){
+//         this.name = name
+//     }
+//     hello(){
+//         console.log('vikas')
+//     }
+// }
 
-class next extends first {
-    constructor(name,course){
-        super(name)
-        this.course = course
-    }
+// class next extends first {
+//     constructor(name,course){
+//         super(name)
+//         this.course = course
+//     }
 
-    value(){
-        console.log(`Rohit,Softwere Developer`)
-    }
-}
-let count = new next (this.course)
-count.value()
- 
+//     value(){
+//         console.log(`Rohit,Softwere Developer`)
+//     }
+// }
+// let count = new next (this.course)
+// count.value()
+
 
 // const person = {
 //     firstName: "John",
@@ -341,26 +341,27 @@ count.value()
 //     lastName: "Doe",
 //     age: 50
 //   };
-   
+
 //   let {firstName, lastName, country = "US"} = person;
 //   console.log(person);
 //   console.log(country);
-  
+
 
 let person = {
-    firstname:"Rahul",
+    firstname: "Rahul",
     lastname: "Yadav",
 
-getValue: function(){
-        return(`the all values names
-         ${person.firstname} and ${person.lastname}`)
+    getValue: function () {
+        return (`My name is
+         ${person.firstname} ${person.lastname}`)
     }
-,
-    phone_number : {
-        rohit:456565121,
-        rosan:44545454
+    ,
+    phone_number: {
+        rohit: 456565121,
+        rosan: 44545454
     }
 }
 
-console.log()
+console.log(person.getValue())
+console.log(person.phone_number.rohit)
 
