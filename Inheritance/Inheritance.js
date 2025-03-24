@@ -368,8 +368,8 @@ console.log(person.phone_number.rohit)
 
 
 function person(first_name, last_name) {
-	this.first_name = first_name;
-	this.last_name = last_name;
+    this.first_name = first_name;
+    this.last_name = last_name;
 }                                                      /*Using a constructor*/
 
 let person1 = new person('Mukesh', 'Kumar');
@@ -377,3 +377,16 @@ let person2 = new person('Rahul', 'Yadav');
 
 console.log(person1.first_name);
 console.log(`${person2.first_name} ${person2.last_name}`);
+
+
+let arr = [1, 2[3, 4, 5][6, 7, 8][9, 10, 11]]
+let newarr = []
+for (let i = 0; i < arr.length; i++) {
+    if(Array.isArray(arr[i]))
+    for(let j=0; j<arr[i]; j++){
+        newarr.push(arr[i][j])
+    }else{
+        newarr.push(arr[i])
+    }
+}
+console.log(newarr)

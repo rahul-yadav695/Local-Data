@@ -68,48 +68,48 @@
 // pro.then((data)=> console.log(data.price+4100))
 // .catch((err) => console.log(err.price-1200))
 
- 
-
-// class MaxNamber {
-//     constructor(key, arr) {
-//         this.key = key
-//         this.arr = arr
-//     }
-
-//     print() {
-//         let newarr = []
-//         for (let i = 0; i < this.key.length; i++) {
-//             for (let j = 0; j < this.key[i]; j++) {
-//                 if (this.key[i]>this.arr[j]) {
-//                     newarr.push(this.key[j])
-//                 }
-//             }
-//         }
-//         console.log(newarr)
-//     }
-// }
-
-// let newarr = new MaxNamber([10, 20, 30, 2, 55, 45, 78, 12])
-// newarr.print()
-
-// const person = {
-//     name: 'GFG',
-//     greet: function() {
-//         console.log(`Hello!${this.name}`);
-//     }
-// };
-// const greet = person.greet;
-// greet();
 
 
+class MaxNamber {
+    constructor(key, arr) {
+        this.key = key
+        this.arr = arr
+    }
 
-function GetApi(){
-    let p = fetch("https://jsonplacholder.typicode.com/todos/1")
-    p.then((response)=>{
+    print() {
+        let newarr = []
+        for (let i = 0; i < this.key.length; i++) {
+            for (let j = 0; j < this.key[i]; j++) {
+                if (this.key[i]>this.arr[j]) {
+                    newarr.push(this.key[j])
+                }
+            }
+        }
+        console.log(newarr)
+    }
+}
+
+let newarr = new MaxNamber([10, 20, 30, 2, 55, 45, 78, 12])
+newarr.print()
+
+const person = {
+    name: 'GFG',
+    greet: function() {
+        console.log(`Hello!${this.name}`);
+    }
+};
+const greet = person.greet;
+greet();
+
+
+
+function GetApi() {
+    fetch("https://jsonplacholder.typicode.com/todos/1")
+    .then((response) => {
         return response.json()
-    }).then((response)=>{
+    }).then((response) => {
         console.log(response)
-    }).catch((err)=>{
+    }).catch((err) => {
         console.log(`Something Went Wrong Please Try Again Later ${err}`)
     })
 }
