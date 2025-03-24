@@ -282,22 +282,46 @@
 // val(10)
 
 
-class Max{
-    constructor(key,value){
-        this.key = key
-        this.value = value
-    }
+// class Max{
+//     constructor(key,value){
+//         this.key = key
+//         this.value = value
+//     }
 
+//     hello(){
+//         let max = this.key[0]
+//         for(let i = 0; i<this.key.length; i++){
+//             if(this.key[i]>max){
+//                 max = this.key[i]
+//             }
+//         }
+//         console.log(max)
+//     }
+// }
+
+// let Final_value = new Max ([10,20,50,55,78,98,12]);
+// Final_value.hello();
+
+
+class first {
+    constructor(name){
+        this.name = name
+    }
     hello(){
-        let max = this.key[0]
-        for(let i = 0; i<this.key.length; i++){
-            if(this.key[i]>max){
-                max = this.key[i]
-            }
-        }
-        console.log(max)
+        console.log('vikas')
     }
 }
 
-let Final_value = new Max ([10,20,50,55,78,98,12]);
-Final_value.hello();
+class next extends first {
+    constructor(name,course){
+        super(name)
+        this.course = course
+    }
+
+    value(){
+        console.log(`Rohit,Softwere Developer`)
+    }
+}
+let count = new next (this.course)
+count.value()
+ 
