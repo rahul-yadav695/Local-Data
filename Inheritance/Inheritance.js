@@ -347,21 +347,34 @@
 //   console.log(country);
 
 
-let person = {
-    firstname: "Rahul",
-    lastname: "Yadav",
+// let person = {
+//     firstname: "Rahul",
+//     lastname: "Yadav",
 
-    getValue: function () {
-        return (`My name is
-         ${person.firstname} ${person.lastname}`)
-    }
-    ,
-    phone_number: {
-        rohit: 456565121,
-        rosan: 44545454
-    }
+//     getValue: function () {
+//         return (`My name is
+//          ${person.firstname} ${person.lastname}`)
+//     }
+//     ,
+//     phone_number: {
+//         rohit: 456565121,
+//         rosan: 44545454
+//     }
+// }
+
+// console.log(person.getValue())
+// console.log(person.phone_number.rohit)
+
+
+// Using a constructor
+
+function person(first_name, last_name) {
+	this.first_name = first_name;
+	this.last_name = last_name;
 }
 
-console.log(person.getValue())
-console.log(person.phone_number.rohit)
+let person1 = new person('Mukesh', 'Kumar');
+let person2 = new person('Rahul', 'Yadav');
 
+console.log(person1.first_name);
+console.log(`${person2.first_name} ${person2.last_name}`);
