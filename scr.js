@@ -5,7 +5,7 @@
 // let row = document.getElementById("main-row")
 
 // function getApi() {
-//     fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+//     fetch('https://jsonplaceholder.typicode.com/todos/1')
 //         .then((data) => {
 //             return data.json()
 
@@ -101,3 +101,19 @@
 // const greet = person.greet;
 // greet();
 
+
+
+function GetApi(){
+    let p = fetch("https://jsonplacholder.typicode.com/todos/1")
+    p.then((response)=>{
+        return response.json()
+    }).then((response)=>{
+        console.log(response)
+    }).catch((err)=>{
+        console.log(`Something Went Wrong Please Try Again Later ${err}`)
+    })
+}
+
+setTimeout(() => {
+    GetApi()
+}, 3000);
