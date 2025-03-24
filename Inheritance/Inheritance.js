@@ -325,3 +325,42 @@ class next extends first {
 let count = new next (this.course)
 count.value()
  
+
+// const person = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     age: 50
+//   };
+
+// let {firstName , lastName , age , myname = "rahul"} = person
+// console.log(person)
+
+
+// const person = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     age: 50
+//   };
+   
+//   let {firstName, lastName, country = "US"} = person;
+//   console.log(person);
+//   console.log(country);
+  
+
+let person = {
+    firstname:"Rahul",
+    lastname: "Yadav",
+
+getValue: function(){
+        return(`the all values names
+         ${person.firstname} and ${person.lastname}`)
+    }
+,
+    phone_number : {
+        rohit:456565121,
+        rosan:44545454
+    }
+}
+
+console.log()
+
