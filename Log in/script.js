@@ -25,6 +25,7 @@ function getMobileNumberFromInput() {
   }
   console.log(value[0])
 
+  
   let password = document.getElementById("password")
 
   let passwordValue = password.value;
