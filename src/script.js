@@ -11,8 +11,8 @@ function getRates() {
             obj = data.bpi;
             console.log(obj)
 
-            mainRow.innerHTML =  `
-                     <div class="col-lg-12 text-center">
+            mainRow.innerHTML = `
+                <div class="col-lg-12 text-center">
                 <h3>Bitcoin</h3>
             </div>
 
