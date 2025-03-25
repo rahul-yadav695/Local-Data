@@ -334,7 +334,8 @@
 
 // let {firstName , lastName , age , myname = "rahul"} = person
 // console.log(person)
-edit
+
+
 // const person = {
 //     firstName: "John",
 //     lastName: "Doe",
