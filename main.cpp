@@ -32,8 +32,8 @@ int main() {
 
     return 0; 
 
-    const double value = 10
-    int pi = 3.14
-    int cricle = 2*value*pi
-    cout<<cricle
+    // const double value = 10
+    // int pi = 3.14
+    // int cricle = 2*value*pi
+    // cout<<cricle
 }
