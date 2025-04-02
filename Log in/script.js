@@ -111,15 +111,15 @@ function getMobileNumberFromInput() {
 // }
 
 
-// let password = document.getElementById("password")
-// let passwordValue = password.value
-// if (passwordValue.length <= 10) {
-//   alert("please password length 10 digit ")
-// } else if (passwordValue.length >= 15) {
-//   alert("Max num Digit 15:-")
-// } else {
-//   CreateinputValue()
-// }
+let password = document.getElementById("password")
+let passwordValue = password.value
+if (passwordValue.length <= 10) {
+  alert("please password length 10 digit ")
+} else if (passwordValue.length >= 15) {
+  alert("Max num Digit 15:-")
+} else {
+  CreateinputValue()
+}
 
 // let FormInputValue = document.getElementById("signin-form")
 // function submitForm(event) {
