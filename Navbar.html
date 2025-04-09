@@ -1,100 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shadow Memory Game</title>
+  <title>Jumping Platformer Game</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #f0f0f0;
-      padding: 20px;
+      margin: 0;
+      background: #222;
     }
-
-    .shadow-img {
-      width: 200px;
-      height: 200px;
-      margin: 20px auto;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      filter: brightness(0);
-    }
-
-    .options button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .message {
-      font-size: 20px;
-      margin-top: 20px;
+    canvas {
+      display: block;
+      margin: auto;
+      background: #444;
+      border: 4px solid #fff;
     }
   </style>
 </head>
-
 <body>
-  <h1>🕵️ Shadow Memory Game</h1>
-  <div class="shadow-img" id="shadow"></div>
-  <div class="options" id="options"></div>
-  <div class="message" id="message"></div>
+<canvas id="gameCanvas" width="400" height="600"></canvas>
+<script>
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
 
-  <script>
-    let items = [
-      {
-        name: "Cat",
-        img: "https://media.istockphoto.com/id/588364784/photo/barking-dog.jpg?s=612x612&w=0&k=20&c=ErzW7CvAodzoy3q006GwMHftirKSG01m8tv-UNdav8k=",
-        options: ["Dog", "Cat", "Elephant"]
-      },
-      {
-        name: "Apple",
-        img: "https://thumbs.dreamstime.com/b/red-apple-isolated-clipping-path-19130134.jpg",
-        options: ["Tomato", "Ball", "Apple"]
-      },
-      {
-        name: "Chair",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Wooden_chair.jpg/200px-Wooden_chair.jpg",
-        options: ["Table", "Chair", "Stool"]
+  const gravity = 0.5;
+  const jumpPower = -10;
+
+  let player = {
+    x: 180,
+    y: 300,
+    width: 40,
+    height: 40,
+    dy: 0,
+    color: "cyan"
+  };
+
+  let platforms = [];
+  let keys = {};
+  let score = 0;
+
+  function createPlatform(x, y, width, height) {
+    platforms.push({ x, y, width, height });
+  }
+
+  function generatePlatforms() {
+    for (let i = 0; i < 6; i++) {
+      createPlatform(Math.random() * 320, i * 100, 80, 10);
+    }
+  }
+
+  function drawPlayer() {
+    ctx.fillStyle = player.color;
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+  }
+
+  function drawPlatforms() {
+    ctx.fillStyle = "lime";
+    for (let p of platforms) {
+      ctx.fillRect(p.x, p.y, p.width, p.height);
+    }
+  }
+
+  function update() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (keys["ArrowLeft"]) player.x -= 4;
+    if (keys["ArrowRight"]) player.x += 4;
+
+    player.dy += gravity;
+    player.y += player.dy;
+
+    if (player.x < 0) player.x = 0;
+    if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
+
+    for (let p of platforms) {
+      if (
+        player.dy > 0 &&
+        player.x + player.width > p.x &&
+        player.x < p.x + p.width &&
+        player.y + player.height > p.y &&
+        player.y + player.height < p.y + p.height + player.dy
+      ) {
+        player.dy = jumpPower;
+        score++;
       }
-    ];
-
-    let current = 0;
-
-    function loadItem() {
-      const item = items[current];
-      document.getElementById("shadow").style.backgroundImage = `url(${item.img})`;
-      const optionsDiv = document.getElementById("options");
-      optionsDiv.innerHTML = "";
-      item.options.forEach(option => {
-        const btn = document.createElement("button");
-        btn.textContent = option;
-        btn.onclick = () => checkAnswer(option);
-        optionsDiv.appendChild(btn);
-      });
-      document.getElementById("message").textContent = "";
     }
 
-    function checkAnswer(selected) {
-      if (selected === items[current].name) {
-        document.getElementById("message").textContent = "✅ Correct!";
-        current++;
-        if (current < items.length) {
-          setTimeout(loadItem, 1000);
-        } else {
-          document.getElementById("message").textContent = "🎉 Game Over! You guessed all correctly!";
-          document.getElementById("options").innerHTML = "";
+    // scroll effect
+    if (player.y < 200) {
+      player.y = 200;
+      for (let p of platforms) {
+        p.y += Math.abs(player.dy);
+        if (p.y > canvas.height) {
+          p.y = 0;
+          p.x = Math.random() * (canvas.width - p.width);
         }
-      } else {
-        document.getElementById("message").textContent = "❌ Wrong! Try again.";
       }
     }
 
-    loadItem();
-  </script>
-</body>
+    drawPlayer();
+    drawPlatforms();
 
+    ctx.fillStyle = "white";
+    ctx.font = "20px Arial";
+    ctx.fillText("Score: " + score, 10, 25);
+
+    if (player.y > canvas.height) {
+      alert("Game Over! Your Score: " + score);
+      document.location.reload();
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  generatePlatforms();
+
+  window.addEventListener("keydown", e => keys[e.key] = true);
+  window.addEventListener("keyup", e => keys[e.key] = false);
+
+  update();
+</script>
+</body>
 </html>
