@@ -1,101 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shadow Memory Game</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #f0f0f0;
-      padding: 20px;
-    }
-
-    .shadow-img {
-      width: 200px;
-      height: 200px;
-      margin: 20px auto;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      filter: brightness(0);
-    }
-
-    .options button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .message {
-      font-size: 20px;
-      margin-top: 20px;
-    }
-  </style>
+  <title>Alarm with Music</title>
 </head>
-
 <body>
-  <h1>🕵️ Shadow Memory Game</h1>
-  <div class="shadow-img" id="shadow"></div>
-  <div class="options" id="options"></div>
-  <div class="message" id="message"></div>
+  <h2>Set Alarm</h2>
+  <input type="time" id="alarmTime">
+  <button onclick="setAlarm()">Set</button>
+
+<audio id="alarmSound" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto"></audio>
 
   <script>
-    let items = [
-      {
-        name: "Cat",
-        img: "https://media.istockphoto.com/id/588364784/photo/barking-dog.jpg?s=612x612&w=0&k=20&c=ErzW7CvAodzoy3q006GwMHftirKSG01m8tv-UNdav8k=",
-        options: ["Dog", "Cat", "Elephant"]
-      },
-      {
-        name: "Apple",
-        img: "https://thumbs.dreamstime.com/b/red-apple-isolated-clipping-path-19130134.jpg",
-        options: ["Tomato", "Ball", "Apple"]
-      },
-      {
-
-        name: "Chair",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Wooden_chair.jpg/200px-Wooden_chair.jpg",
-        options: ["Table", "Chair", "Stool"]
+    function setAlarm() {
+      const input = document.getElementById("alarmTime").value;
+      if (!input) {
+        alert("Please select a time.");
+        return;
       }
-    ];
 
-    let current = 0;
+      const now = new Date();
+      const [h, m] = input.split(":");
+      const alarmTime = new Date();
 
-    function loadItem() {
-      const item = items[current];
-      document.getElementById("shadow").style.backgroundImage = `url(${item.img})`;
-      const optionsDiv = document.getElementById("options");
-      optionsDiv.innerHTML = "";
-      item.options.forEach(option => {
-        const btn = document.createElement("button");
-        btn.textContent = option;
-        btn.onclick = () => checkAnswer(option);
-        optionsDiv.appendChild(btn);
-      });
-      document.getElementById("message").textContent = "";
-    }
+      alarmTime.setHours(h);
+      alarmTime.setMinutes(m);
+      alarmTime.setSeconds(0);
 
-    function checkAnswer(selected) {
-      if (selected === items[current].name) {
-        document.getElementById("message").textContent = "✅ Correct!";
-        current++;
-        if (current < items.length) {
-          setTimeout(loadItem, 1000);
-        } else {
-          document.getElementById("message").textContent = "🎉 Game Over! You guessed all correctly!";
-          document.getElementById("options").innerHTML = "";
-        }
-      } else {
-        document.getElementById("message").textContent = "❌ Wrong! Try again.";
+      if (alarmTime <= now) {
+        alarmTime.setDate(alarmTime.getDate() + 1); // Next day
       }
-    }
 
-    loadItem();
+      const timeDiff = alarmTime - now;
+
+      setTimeout(() => {
+        const sound = document.getElementById("alarmSound");
+        sound.play();
+        alert("⏰ Alarm! Music is playing...");
+      }, timeDiff);
+    }
   </script>
 </body>
-
 </html>
