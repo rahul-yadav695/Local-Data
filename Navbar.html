@@ -12,15 +12,15 @@
 
   <script>
     function setAlarm() {
-      let input = document.getElementById("alarmTime").value;
+      const input = document.getElementById("alarmTime").value;
       if (!input) {
         alert("Please select a time.");
         return;
       }
 
-      let now = new Date();
-      let [h, m] = input.split(":");
-      let alarmTime = new Date();
+      const now = new Date();
+      const [h, m] = input.split(":");
+      const alarmTime = new Date();
 
       alarmTime.setHours(h);
       alarmTime.setMinutes(m);
@@ -30,10 +30,10 @@
         alarmTime.setDate(alarmTime.getDate() + 1); // Next day
       }
 
-      let timeDiff = alarmTime - now;
+      const timeDiff = alarmTime - now;
 
       setTimeout(() => {
-        let sound = document.getElementById("alarmSound");
+        const sound = document.getElementById("alarmSound");
         sound.play();
         alert("⏰ Alarm! Music is playing...");
       }, timeDiff);
