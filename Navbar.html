@@ -30,10 +30,10 @@
         alarmTime.setDate(alarmTime.getDate() + 1); // Next day
       }
 
-      const timeDiff = alarmTime - now;
+      let timeDiff = alarmTime - now;
 
       setTimeout(() => {
-        const sound = document.getElementById("alarmSound");
+        let sound = document.getElementById("alarmSound");
         sound.play();
         alert("⏰ Alarm! Music is playing...");
       }, timeDiff);
