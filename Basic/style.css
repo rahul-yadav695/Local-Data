@@ -44,7 +44,7 @@
 
  nav {
      padding: 2vw 0vw;
-     width: 100%; 
+     width: 100%;
      display: flex;
      align-items: center;
      position: relative;
@@ -226,7 +226,7 @@
  }
 
  #moving-text h1 {
-     font-size: 9vw; 
+     font-size: 9vw;
      display: inline-block;
  }
 
