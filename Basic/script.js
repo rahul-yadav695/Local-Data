@@ -20,7 +20,7 @@ function page4Animation() {
             var image = e.getAttribute("data-image")
             fixed.style.backgroundImage = `url(${image})`
         })
-    })
+    }) 
 }
 
 function swiperAnimation() {
