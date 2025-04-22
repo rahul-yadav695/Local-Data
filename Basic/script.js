@@ -55,4 +55,6 @@ function loaderAnimation() {
     }, 4200);
 }
 
- 
+document.addEventListener("DOMContentLoaded", function () {
+    swiperAnimation();
+}); 
