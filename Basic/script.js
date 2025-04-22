@@ -57,4 +57,7 @@ function loaderAnimation() {
 
 document.addEventListener("DOMContentLoaded", function () {
     swiperAnimation();
+    page4Animation();
+    menuAnimation();
+    loaderAnimation();
 }); 
