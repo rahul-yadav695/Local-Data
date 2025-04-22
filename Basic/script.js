@@ -21,5 +21,19 @@ function page4Animation() {
         });
     });
 }
+function swiperAnimation() {
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 100,
+    });
+}
 
+function menuAnimation() {
+    var menu = document.querySelector("nav h3");
+    var full = document.querySelector("#full-scr");
+    var navimg = document.querySelector("nav img");
+    var flag = 0;
+
+ 
  
