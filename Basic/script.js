@@ -18,7 +18,7 @@ function page4Animation() {
         e.addEventListener("mouseenter", function () {
             var image = e.getAttribute("data-image");
             fixed.style.backgroundImage = `url(${image})`;
-        });
+        }); 
     });
 }
 function swiperAnimation() {
