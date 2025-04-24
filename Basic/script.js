@@ -12,7 +12,7 @@ function page4Animation() {
     });
     elemC.addEventListener("mouseleave", function () {
         fixed.style.display = "none";
-    }); 
+    });
     var elems = document.querySelectorAll(".elem");
     elems.forEach(function (e) {
         e.addEventListener("mouseenter", function () {
